@@ -80,7 +80,7 @@ function loadHeader() {
                 </div>
 
                 <a href="about.html" class="nav-link text-[#AEB4C2] hover:text-white transition" data-i18n="nav_about">회사소개</a>
-                <a href="partnership.html" class="nav-link text-[#AEB4C2] hover:text-white transition" data-i18n="nav_contact">고객지원</a>
+                <a href="#" class="nav-link text-[#AEB4C2] hover:text-white transition" data-i18n="nav_contact">고객지원</a>
             </nav>
 
             <!-- Language & Mobile Toggle -->
@@ -104,7 +104,7 @@ function loadHeader() {
                 <hr class="border-white/10 my-2">
                 <a href="index.html" class="text-[#AEB4C2] text-lg" data-i18n="mobile_home">홈</a>
                 <a href="about.html" class="text-[#AEB4C2] text-lg" data-i18n="mobile_about">회사소개</a>
-                <a href="partnership.html" class="text-[#AEB4C2] text-lg" data-i18n="mobile_contact">고객지원</a>
+                <a href="#" class="text-[#AEB4C2] text-lg" data-i18n="mobile_contact">고객지원</a>
                 <div class="flex gap-4 pt-4">
                     <button onclick="setLanguage('ko')" class="text-white font-bold">KR</button>
                     <button onclick="setLanguage('en')" class="text-[#AEB4C2]">EN</button>
@@ -127,7 +127,7 @@ function loadFooter() {
                 <a href="index.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_home">홈</a>
                 <a href="privacy.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_privacy">개인정보처리방침</a>
                 <a href="terms.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_terms">이용약관</a>
-                <a href="partnership.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_inquiry">문의하기</a>
+                <a href="contact.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_inquiry">문의하기</a>
             </div>
             <p class="text-xs text-silver/40" data-i18n="footer_copyright">© 2026 Vivaura Technologies. All rights reserved.</p>
         </div>
