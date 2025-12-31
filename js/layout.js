@@ -10,14 +10,14 @@ const commonTranslations = {
         sub_smartgym: '저비용 레트로핏 솔루션', sub_vivasport: '올인원 스포츠 앱',
         mobile_home: '홈', mobile_solutions: '솔루션', mobile_about: '회사소개', mobile_contact: '고객지원',
         footer_home: '홈', footer_privacy: '개인정보처리방침', footer_terms: '이용약관', footer_inquiry: '문의하기',
-        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.'
+        footer_copyright: '© 2025 Vivaura Technologies. All rights reserved.'
     },
     en: {
         nav_home: 'Home', nav_solutions: 'Solutions', nav_about: 'About', nav_contact: 'Support',
         sub_smartgym: 'Low-cost Retrofit Solution', sub_vivasport: 'All-in-One Sports App',
         mobile_home: 'Home', mobile_solutions: 'Solutions', mobile_about: 'About', mobile_contact: 'Support',
         footer_home: 'Home', footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service', footer_inquiry: 'Inquiry',
-        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.'
+        footer_copyright: '© 2025 Vivaura Technologies. All rights reserved.'
     }
 };
 
@@ -85,7 +85,8 @@ function loadHeader() {
 
             <!-- Language & Mobile Toggle -->
             <div class="flex items-center gap-5">
-                <div class="hidden md:flex gap-3 text-sm text-[#AEB4C2] font-medium border-r border-white/10 pr-5">
+                <!-- 원본 스타일 복원: gap-2, pr-4, mr-2 -->
+                <div class="hidden md:flex gap-2 text-sm text-[#AEB4C2] font-medium border-r border-white/10 pr-4 mr-2">
                     <button onclick="setLanguage('ko')" class="lang-btn hover:text-white transition" id="lang-ko">KR</button>
                     <button onclick="setLanguage('en')" class="lang-btn hover:text-white transition" id="lang-en">EN</button>
                 </div>
@@ -122,17 +123,14 @@ function loadFooter() {
     footerContainer.innerHTML = `
     <footer class="footer-vivaura">
         <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-3 mb-8">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><defs><linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3A7DFF"/><stop offset="100%" stop-color="#00D1B2"/></linearGradient><linearGradient id="f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00D1B2"/><stop offset="100%" stop-color="#A6FF3B"/></linearGradient></defs><rect width="512" height="512" rx="100" fill="none"/><rect x="176" y="90" width="88" height="340" rx="44" fill="url(#f1)" transform="rotate(-28 220 260)"/><rect x="248" y="90" width="88" height="340" rx="44" fill="url(#f2)" transform="rotate(28 292 260)"/></svg>
-                <span class="text-2xl font-bold text-white">Vivaura Technologies</span>
-            </div>
+            <!-- Logo 제거 (푸터 심플하게) -->
             <div class="flex justify-center gap-8 mb-8 flex-wrap">
                 <a href="index.html" class="footer-link" data-i18n="footer_home">홈</a>
                 <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">개인정보처리방침</a>
                 <a href="terms.html" class="footer-link" data-i18n="footer_terms">이용약관</a>
                 <a href="partnership.html" class="footer-link" data-i18n="footer_inquiry">문의하기</a>
             </div>
-            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2026 Vivaura Technologies. All rights reserved.</p>
+            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2025 Vivaura Technologies. All rights reserved.</p>
         </div>
     </footer>
     `;
@@ -207,6 +205,7 @@ function updateLangButtons(lang) {
     const btnKo = document.getElementById('lang-ko');
     const btnEn = document.getElementById('lang-en');
     
+    // 원본 스타일 복원: 활성화 시 흰색+Bold (이전 버전: text-aurora 제거)
     if (btnKo && btnEn) {
         if (lang === 'ko') {
             btnKo.classList.add('text-white', 'font-bold');
