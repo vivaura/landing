@@ -8,13 +8,13 @@ const commonTranslations = {
     ko: {
         nav_solutions: '솔루션', nav_about: '회사소개', nav_events: '이벤트', nav_contact: '문의하기',
         footer_home: '홈', footer_about: '회사소개', footer_privacy: '개인정보처리방침', footer_terms: '이용약관', footer_contact: '문의하기',
-        footer_copyright: '© 2025 Vivaura Technologies. All rights reserved.',
+        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.',
         mobile_home: '홈', mobile_about: '회사소개', mobile_smartgym: '스마트 짐', mobile_vivasport: '비바 스포츠', mobile_events: '이벤트', mobile_contact: '문의하기'
     },
     en: {
         nav_solutions: 'Solutions', nav_about: 'About', nav_events: 'Events', nav_contact: 'Contact Us',
         footer_home: 'Home', footer_about: 'About Us', footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service', footer_contact: 'Contact',
-        footer_copyright: '© 2025 Vivaura Technologies. All rights reserved.',
+        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.',
         mobile_home: 'Home', mobile_about: 'About', mobile_smartgym: 'Smart Gym', mobile_vivasport: 'VivaSport', mobile_events: 'Events', mobile_contact: 'Contact Us'
     }
 };
@@ -47,7 +47,7 @@ function loadHeader() {
                     <rect x="176" y="90" width="88" height="340" rx="44" fill="url(#g1)" transform="rotate(-28 220 260)"/>
                     <rect x="248" y="90" width="88" height="340" rx="44" fill="#A6FF3B" transform="rotate(28 292 260)"/>
                 </svg>
-                <span class="text-xl font-bold text-white tracking-wide">Vivaura <span class="text-aurora">Tech</span></span>
+                <span class="text-xl font-bold text-white tracking-wide">Vivaura <span class="text-aurora">Technologies</span></span>
             </a>
 
             <!-- Desktop Nav -->
@@ -123,7 +123,7 @@ function loadFooter() {
                 <a href="terms.html" class="footer-link" data-i18n="footer_terms">Terms of Service</a>
                 <a href="contact.html" class="footer-link" data-i18n="footer_contact">Contact</a>
             </div>
-            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2025 Vivaura Technologies. All rights reserved.</p>
+            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2026 Vivaura Technologies. All rights reserved.</p>
         </div>
     </footer>
     `;
