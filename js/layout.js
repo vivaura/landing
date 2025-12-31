@@ -10,14 +10,14 @@ const commonTranslations = {
         sub_smartgym: '저비용 레트로핏 솔루션', sub_vivasport: '올인원 스포츠 앱',
         mobile_home: '홈', mobile_solutions: '솔루션', mobile_about: '회사소개', mobile_contact: '고객지원',
         footer_home: '홈', footer_privacy: '개인정보처리방침', footer_terms: '이용약관', footer_inquiry: '문의하기',
-        footer_copyright: '© 2025 Vivaura Technologies. All rights reserved.'
+        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.'
     },
     en: {
         nav_home: 'Home', nav_solutions: 'Solutions', nav_about: 'About', nav_contact: 'Support',
         sub_smartgym: 'Low-cost Retrofit Solution', sub_vivasport: 'All-in-One Sports App',
         mobile_home: 'Home', mobile_solutions: 'Solutions', mobile_about: 'About', mobile_contact: 'Support',
         footer_home: 'Home', footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service', footer_inquiry: 'Inquiry',
-        footer_copyright: '© 2025 Vivaura Technologies. All rights reserved.'
+        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.'
     }
 };
 
@@ -130,7 +130,7 @@ function loadFooter() {
                 <a href="terms.html" class="footer-link" data-i18n="footer_terms">이용약관</a>
                 <a href="partnership.html" class="footer-link" data-i18n="footer_inquiry">문의하기</a>
             </div>
-            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2025 Vivaura Technologies. All rights reserved.</p>
+            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2026 Vivaura Technologies. All rights reserved.</p>
         </div>
     </footer>
     `;
