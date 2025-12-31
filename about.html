@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vivaura Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1020',
+                        azure: '#3A7DFF',
+                        teal: '#00D1B2',
+                        lime: '#A6FF3B',
+                        graphite: '#1C1F2A',
+                        slate: '#2B3040',
+                        silver: '#AEB4C2',
+                    },
+                    fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
+                    backgroundImage: { 'grad-aurora': 'linear-gradient(90deg, #3A7DFF, #00D1B2, #A6FF3B)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B1020; color: #AEB4C2; -webkit-font-smoothing: antialiased; }
+        .text-aurora { background: linear-gradient(90deg, #3A7DFF, #00D1B2, #A6FF3B); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
+        .glass-card { background: rgba(28, 31, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .group:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu { transition: all 0.2s ease-in-out; }
+        .lang-btn.active { color: #FFFFFF; font-weight: 700; }
+	/* 푸터 */
+        .vivaura-footer {
+            background-color: var(--vivaura-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .vivaura-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .vivaura-footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .vivaura-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .vivaura-footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .vivaura-footer-link:hover {
+            color: white;
+        }
+        
+        .vivaura-footer-copyright {
+            margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }		
+    </style>
+</head>
+<body class="overflow-x-hidden" x-data="{ mobileMenuOpen: false }">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-navy/90 backdrop-blur border-b border-white/5">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512"><defs><linearGradient id="a1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3A7DFF"/><stop offset="100%" stop-color="#00D1B2"/></linearGradient><linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00D1B2"/><stop offset="100%" stop-color="#A6FF3B"/></linearGradient></defs><rect width="512" height="512" fill="none"/><rect x="176" y="90" width="88" height="340" rx="44" fill="url(#a1)" transform="rotate(-28 220 260)"/><rect x="248" y="90" width="88" height="340" rx="44" fill="url(#a2)" transform="rotate(28 292 260)"/></svg>
+                <span class="text-xl font-bold text-white tracking-tighter">Vivaura <span class="text-aurora">Technologies</span></span>
+        </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+			<a href="index.html" class="text-silver hover:text-white transition font-medium" data-lang="nav_home">홈</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 text-white font-bold transition hover:text-teal">
+                        <span data-lang="nav_solutions">솔루션</span> <i class="fa-solid fa-chevron-down text-xs mt-0.5 text-slate-500 group-hover:text-teal"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-16 left-1/2 -translate-x-1/2 w-72 bg-graphite border border-white/10 rounded-xl shadow-2xl p-2 opacity-0 invisible transform translate-y-2">
+                        <div class="p-2 pb-0 text-xs font-bold text-slate-500 uppercase tracking-wider">Hardware</div>
+                        <a href="smartgym.html" class="block p-3 rounded-lg bg-slate/50 mb-1 hover:bg-slate transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-teal/20 flex items-center justify-center text-teal"><i class="fa-solid fa-dumbbell"></i></div>
+                                <div><span class="block font-bold text-white text-sm">Smart Gym</span><span class="block text-xs text-silver mt-0.5" data-lang="sub_smartgym">저비용 레트로핏 솔루션</span></div>
+                            </div>
+                        </a>
+                        <div class="p-2 pb-0 pt-2 text-xs font-bold text-slate-500 uppercase tracking-wider">Software</div>
+                        <a href="vivasport.html" class="block p-3 rounded-lg hover:bg-slate/50 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-azure/20 flex items-center justify-center text-azure"><i class="fa-solid fa-mobile-screen"></i></div>
+                                <div><span class="block font-bold text-white text-sm">VivaSport Platform</span><span class="block text-xs text-silver mt-0.5" data-lang="sub_vivasport">올인원 스포츠 앱</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="about.html" class="text-teal font-bold transition border-b-2 border-teal pb-1" data-lang="nav_about">회사소개</a>
+                <a href="#" class="text-silver hover:text-white transition font-medium" data-lang="nav_contact">고객지원</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <div class="flex gap-2 text-sm text-silver font-medium border-r border-white/10 pr-4 mr-2">
+                    <button class="lang-btn hover:text-white active" onclick="setLang('ko')">KR</button>
+                    <button class="lang-btn hover:text-white" onclick="setLang('en')">EN</button>
+                </div>
+            </div>
+            
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-navy border-t border-white/10 absolute w-full p-6 shadow-2xl" x-transition>
+            <div class="flex flex-col gap-4">
+                <div class="text-xs font-bold text-slate-500 uppercase">Solutions</div>
+                <a href="smartgym.html" class="text-white font-bold text-lg pl-4 border-l-2 border-teal">Vivaura Smart Gym</a>
+                <a href="vivasport.html" class="text-white font-bold text-lg pl-4 border-l-2 border-azure">VivaSport Platform</a>
+                <hr class="border-white/10 my-2">
+                <a href="about.html" class="text-white font-bold pl-4" data-lang="nav_about">회사소개</a>
+                <a href="#" class="text-silver pl-4" data-lang="nav_contact">고객지원</a>
+                <div class="flex gap-4 pl-4 pt-2">
+                    <button class="text-white font-bold" onclick="setLang('ko')">KR</button>
+                    <button class="text-silver" onclick="setLang('en')">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: Brand Story -->
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-grad-aurora rounded-full blur-[150px] opacity-10 -z-10"></div>
+            
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <span class="text-azure font-bold tracking-widest uppercase text-sm mb-4 block" data-lang="hero_label">Our Brand Story</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8">
+                    Play it <span class="text-lime">Viva</span>.<br>
+                    Feel the <span class="text-teal">Aura</span>.
+                </h1>
+                <p class="text-xl text-silver max-w-3xl mx-auto mb-16 leading-relaxed" data-lang="hero_desc">
+                    Vivaura Technologies는 스포츠의 <strong>'생동감(Viva)'</strong>과<br class="hidden md:block"> 
+                    세상을 바꾸는 <strong>'긍정적 에너지(Aura)'</strong>를 기술로 연결합니다.
+                </p>
+
+                <!-- Meaning Cards -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="glass-card p-10 rounded-3xl text-left relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-lime/20 rounded-full blur-3xl"></div>
+                        <h3 class="text-3xl font-black text-white mb-2 italic">Viva</h3>
+                        <p class="text-lime font-bold text-sm mb-4 uppercase">Vitality & Life</p>
+                        <p class="text-silver" data-lang="viva_desc">스포츠가 주는 날것 그대로의 생동감. 심장이 뛰고, 땀이 흐르는 그 순간의 역동성을 상징합니다.</p>
+                    </div>
+                    <div class="glass-card p-10 rounded-3xl text-left relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-azure/20 rounded-full blur-3xl"></div>
+                        <h3 class="text-3xl font-black text-white mb-2 italic">Aura</h3>
+                        <p class="text-azure font-bold text-sm mb-4 uppercase">Energy & Influence</p>
+                        <p class="text-silver" data-lang="aura_desc">개인의 변화가 만드는 긍정적 영향력. 당신의 열정이 주변으로 퍼져나가는 에너지를 의미합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="py-24 bg-graphite">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-lang="mission_title">
+                            기술로 장벽 없는 세상을<br>만들어 갑니다.
+                        </h2>
+                        <p class="text-silver mb-8 leading-relaxed" data-lang="mission_desc">
+                            우리는 단순한 기술 공급을 넘어, 장애인과 비장애인, 선수와 대중이 
+                            함께 땀 흘릴 수 있는 <strong>'가장 포용적인 스포츠 생태계'</strong>를 구축합니다.<br><br>
+                            모든 사람의 움직임은 데이터가 되고, 그 데이터는 다시 개인의 건강과 사회적 가치로 환원됩니다. 
+                            이것이 Vivaura가 추구하는 <strong>ESG Native</strong> 기업의 모습입니다.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-navy flex items-center justify-center border border-white/10 text-teal text-xl"><i class="fa-solid fa-universal-access"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1" data-lang="val_1_t">Inclusiveness (포용성)</h4>
+                                    <p class="text-sm text-slate-400" data-lang="val_1_d">누구도 소외되지 않는 배리어 프리 기술</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-navy flex items-center justify-center border border-white/10 text-azure text-xl"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1" data-lang="val_2_t">Innovation (혁신)</h4>
+                                    <p class="text-sm text-slate-400" data-lang="val_2_d">아날로그의 한계를 넘는 디지털 전환</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-navy flex items-center justify-center border border-white/10 text-lime text-xl"><i class="fa-solid fa-leaf"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1" data-lang="val_3_t">Sustainability (지속가능성)</h4>
+                                    <p class="text-sm text-slate-400" data-lang="val_3_d">건강한 삶과 사회적 가치의 선순환</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[500px]">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1974&auto=format&fit=crop" alt="Team Meeting" class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-700">
+                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-navy to-transparent p-8">
+                                <p class="text-white font-bold text-xl">"Change the world, one rep at a time."</p>
+                                <p class="text-teal font-medium mt-1">Sungjin Moon, CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Info -->
+        <section class="py-24 bg-navy relative border-t border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4" data-lang="info_title">Company Overview</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <i class="fa-solid fa-building text-3xl text-silver mb-4"></i>
+                        <h4 class="text-white font-bold mb-2">Corporate Name</h4>
+                        <p class="text-slate-400 text-sm">주식회사 Vivaura Technologies</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <i class="fa-solid fa-user-tie text-3xl text-silver mb-4"></i>
+                        <h4 class="text-white font-bold mb-2">CEO / Founder</h4>
+                        <p class="text-slate-400 text-sm">문성진 (Moon Sung-jin)</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <i class="fa-solid fa-map-location-dot text-3xl text-silver mb-4"></i>
+                        <h4 class="text-white font-bold mb-2">Location</h4>
+                        <p class="text-slate-400 text-sm">Seoul, Republic of Korea</p>
+                    </div>
+                </div>
+
+                <div class="mt-20 text-center">
+                    <h3 class="text-xl font-bold text-white mb-6" data-lang="contact_title">함께 세상을 바꿀 파트너를 찾습니다</h3>
+                    <div class="flex justify-center gap-4">
+                        <a href="contact.html" class="bg-gradient-to-r from-azure to-teal text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:translate-y-[-2px] transition">
+                            <span data-lang="btn_partner">제휴/투자 문의</span>
+                        </a>
+                        <a href="/cdn-cgi/l/email-protection#c3a0acadb7a2a0b783b5aab5a2b6b1a2edb7a6a0ab" class="border border-white/20 text-white px-8 py-3 rounded-full text-sm hover:bg-white/10 transition">
+                            <span class="__cf_email__" data-cfemail="11727e7f6570726551677867706463703f65747279">[email&#160;protected]</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="vivaura-footer">
+        <div class="vivaura-footer-content">           
+            <div class="vivaura-footer-links">
+                <a href="index.html" class="hover:text-white transition" data-lang="footer_home">Home</a>
+                <a href="privacy.html" class="hover:text-white transition" data-lang="footer_privacy">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition" data-lang="footer_terms">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition" data-lang="footer_inquiry">Inquiry</a>
+            </div>
+
+            <div class="vivaura-footer-copyright">
+                <p>© 2026 Vivaura Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        const translations = {
+            ko: {
+				nav_home: '홈',
+                nav_solutions: '솔루션', nav_about: '회사소개', nav_contact: '고객지원', btn_contact: 'Contact Us',
+                sub_smartgym: '저비용 레트로핏 솔루션', sub_vivasport: '올인원 스포츠 앱',
+                hero_label: 'Our Brand Story',
+                hero_desc: 'Vivaura Technologies는 스포츠의 <strong>\'생동감(Viva)\'</strong>과<br class="hidden md:block">세상을 바꾸는 <strong>\'긍정적 에너지(Aura)\'</strong>를 기술로 연결합니다.',
+                viva_desc: '스포츠가 주는 날것 그대로의 생동감. 심장이 뛰고, 땀이 흐르는 그 순간의 역동성을 상징합니다.',
+                aura_desc: '개인의 변화가 만드는 긍정적 영향력. 당신의 열정이 주변으로 퍼져나가는 에너지를 의미합니다.',
+                mission_title: '기술로 장벽 없는 세상을<br>만들어 갑니다.',
+                mission_desc: '우리는 단순한 기술 공급을 넘어, 장애인과 비장애인, 선수와 대중이 함께 땀 흘릴 수 있는 <strong>\'가장 포용적인 스포츠 생태계\'</strong>를 구축합니다.<br><br>모든 사람의 움직임은 데이터가 되고, 그 데이터는 다시 개인의 건강과 사회적 가치로 환원됩니다. 이것이 Vivaura가 추구하는 <strong>ESG Native</strong> 기업의 모습입니다.',
+                val_1_t: 'Inclusiveness (포용성)', val_1_d: '누구도 소외되지 않는 배리어 프리 기술',
+                val_2_t: 'Innovation (혁신)', val_2_d: '아날로그의 한계를 넘는 디지털 전환',
+                val_3_t: 'Sustainability (지속가능성)', val_3_d: '건강한 삶과 사회적 가치의 선순환',
+                info_title: 'Company Overview',
+                contact_title: '함께 세상을 바꿀 파트너를 찾습니다', btn_partner: '제휴/투자 문의',
+				footer_home: '홈',
+                footer_privacy: '개인정보처리방침',
+                footer_terms: '이용약관',
+                footer_inquiry: '문의'
+            },
+            en: {
+				nav_home: 'Home',
+                nav_solutions: 'Solutions', nav_about: 'About', nav_contact: 'Support', btn_contact: 'Contact Us',
+                sub_smartgym: 'Low-cost Retrofit Solution', sub_vivasport: 'All-in-One Sports App',
+                hero_label: 'Our Brand Story',
+                hero_desc: 'Vivaura Technologies connects the <strong>\'Vibrancy (Viva)\'</strong> of sports<br class="hidden md:block">and the <strong>\'Positive Energy (Aura)\'</strong> that changes the world through technology.',
+                viva_desc: 'The raw vibrancy of sports. Symbolizing the dynamic moments when hearts beat and sweat flows.',
+                aura_desc: 'Positive influence created by personal change. The energy of your passion spreading to others.',
+                mission_title: 'Creating a Barrier-Free World<br>Through Technology.',
+                mission_desc: 'We go beyond supplying technology to build the <strong>\'Most Inclusive Sports Ecosystem\'</strong> where disabled and non-disabled people, athletes, and the public can sweat together.<br><br>Everyone\'s movement becomes data, which returns as personal health and social value. This is the <strong>ESG Native</strong> company Vivaura aspires to be.',
+                val_1_t: 'Inclusiveness', val_1_d: 'Barrier-free technology leaving no one behind',
+                val_2_t: 'Innovation', val_2_d: 'Digital transformation beyond analog limits',
+                val_3_t: 'Sustainability', val_3_d: 'Virtuous cycle of healthy life and social value',
+                info_title: 'Company Overview',
+                contact_title: 'Looking for Partners to Change the World', btn_partner: 'Partnership Inquiry',
+                footer_home: 'Home',
+                footer_privacy: 'Privacy Policy',
+                footer_terms: 'Terms of Service',
+                footer_inquiry: 'Inquiry'				
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.textContent === (lang === 'ko' ? 'KR' : 'EN')) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            localStorage.setItem('vivaLang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('vivaLang') || 'ko';
+            setLang(savedLang);
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
