@@ -1,500 +1,138 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivaura - Contact Us</title>
+    <title>Contact Us - Vivaura Technologies</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-	<script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#0B1020',
-                        azure: '#3A7DFF',
-                        teal: '#00D1B2',
-                        lime: '#A6FF3B',
-                        graphite: '#1C1F2A',
-                        slate: '#2B3040',
-                        silver: '#AEB4C2',
-                    },
-                    fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
-                    backgroundImage: { 'grad-aurora': 'linear-gradient(90deg, #3A7DFF, #00D1B2, #A6FF3B)' }
-                }
-            }
-        }
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // emailjs.init("YOUR_PUBLIC_KEY"); // 실제 사용 시 키 입력 필요
+        })();
     </script>
-    <style>
-        :root {
-            --navy: #0B1020;
-            --azure: #3A7DFF;
-            --teal: #00D1B2;
-            --lime: #A6FF3B;
-            --graphite: #1C1F2A;
-            --slate: #2B3040;
-            --silver: #AEB4C2;
-            --white: #FFFFFF;
-            --grad-aurora: linear-gradient(90deg, var(--azure), var(--teal), var(--lime));
-        }
-        .group:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu { transition: all 0.2s ease-in-out; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Pretendard', 'Inter', sans-serif;
-            background-color: var(--navy);
-            color: var(--silver);
-        }
-        .aurora-text {
-            background: var(--grad-aurora);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .btn-primary {
-            background: var(--grad-aurora);
-            color: var(--navy);
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 209, 178, 0.2);
-        }
-        .btn-primary:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        .btn-secondary {
-            background-color: var(--slate);
-            color: var(--white);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background-color: var(--graphite);
-        }
-        .glass-card {
-            background: rgba(28, 31, 42, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(43, 48, 64, 0.5);
-        }
-        .lang-switcher button.active {
-            color: var(--lime);
-            font-weight: 700;
-        }
-        /* Form Styles */
-        .form-input, .form-select, .form-textarea {
-            background-color: var(--graphite);
-            border: 1px solid var(--slate);
-            color: var(--white);
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            width: 100%;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
-            outline: none;
-            border-color: var(--teal);
-            box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.3);
-        }
-        .terms-box {
-            background-color: var(--graphite);
-            border: 1px solid var(--slate);
-            height: 8rem;
-            overflow-y: auto;
-            padding: 1rem;
-            font-size: 0.875rem;
-            border-radius: 0.5rem;
-        }
-/* 푸터 */
-        .vivaura-footer {
-            background-color: var(--navy);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .vivaura-footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .vivaura-footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .vivaura-footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .vivaura-footer-link {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .vivaura-footer-link:hover {
-            color: white;
-        }
-        
-        .vivaura-footer-copyright {
-            margin-top: 1.5rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-    </style>
 </head>
-<body class="w-full">
+<body class="overflow-x-hidden">
 
-<!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-navy/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
-        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+    <div id="header-container"></div>
 
-            <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-3 group">
-				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512"><defs><linearGradient id="a1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3A7DFF"/><stop offset="100%" stop-color="#00D1B2"/></linearGradient><linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00D1B2"/><stop offset="100%" stop-color="#A6FF3B"/></linearGradient></defs><rect width="512" height="512" fill="none"/><rect x="176" y="90" width="88" height="340" rx="44" fill="url(#a1)" transform="rotate(-28 220 260)"/><rect x="248" y="90" width="88" height="340" rx="44" fill="url(#a2)" transform="rotate(28 292 260)"/></svg>
-                <span class="text-xl font-bold text-white tracking-tighter">Vivaura <span class="aurora-text">Technologies</span></span>
-        </a>
+    <main class="pt-32 pb-20 relative">
+        <div class="bg-glow-orb" style="top: 0; left: 50%; transform: translateX(-50%); background: var(--color-primary);"></div>
 
-            <!-- Nav -->
-            <nav class="hidden md:flex items-center gap-8">
-			 <a href="index.html" class="text-silver hover:text-white transition font-medium" data-lang="nav_home">홈</a>
-                <div class="relative group h-20 flex items-center">
-                    <button class="flex items-center gap-1 text-white font-bold transition hover:text-teal">
-                        <span data-lang="nav_solutions">솔루션</span> <i class="fa-solid fa-chevron-down text-xs mt-0.5 text-slate-500 group-hover:text-teal"></i>
-                    </button>
-                    <div class="dropdown-menu absolute top-16 left-1/2 -translate-x-1/2 w-72 bg-graphite border border-white/10 rounded-xl shadow-2xl p-2 opacity-0 invisible transform translate-y-2">
-                        <div class="p-2 pb-0 text-xs font-bold text-slate-500 uppercase tracking-wider">Hardware</div>
-                        <a href="smartgym.html" class="block p-3 rounded-lg bg-slate/50 mb-1 hover:bg-slate transition">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-teal/20 flex items-center justify-center text-teal"><i class="fa-solid fa-dumbbell"></i></div>
-                                <div><span class="block font-bold text-white text-sm">Smart Gym</span><span class="block text-xs text-silver mt-0.5" data-lang="sub_smartgym">저비용 레트로핏 솔루션</span></div>
-                            </div>
-                        </a>
-                        <div class="p-2 pb-0 pt-2 text-xs font-bold text-slate-500 uppercase tracking-wider">Software</div>
-                        <a href="vivasport.html" class="block p-3 rounded-lg hover:bg-slate/50 transition">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-azure/20 flex items-center justify-center text-azure"><i class="fa-solid fa-mobile-screen"></i></div>
-                                <div><span class="block font-bold text-white text-sm">VivaSport Platform</span><span class="block text-xs text-silver mt-0.5" data-lang="sub_vivasport">올인원 스포츠 앱</span></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <a href="about.html" class="text-silver hover:text-white transition font-medium" data-lang="nav_about">회사소개</a>
-                <a href="#" class="text-silver hover:text-white transition font-medium" data-lang="nav_contact">고객지원</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-4">
-                <div class="flex gap-2 text-sm text-silver font-medium border-r border-white/10 pr-4 mr-2">
-                    <button class="lang-btn hover:text-white active" onclick="setLang('ko')">KR</button>
-                    <button class="lang-btn hover:text-white" onclick="setLang('en')">EN</button>
-                </div>
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="contact_title">Contact & <span class="text-aurora">Support</span></h1>
+                <p class="text-silver" data-i18n="contact_subtitle">제휴 제안, 기술 지원, 일반 문의 등 무엇이든 남겨주세요.</p>
             </div>
-            
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" class="md:hidden bg-navy border-t border-white/10 absolute w-full p-6 shadow-2xl" x-transition>
-            <div class="flex flex-col gap-4">
-                <div class="text-xs font-bold text-slate-500 uppercase">Solutions</div>
-                <a href="smartgym.html" class="text-white font-bold text-lg pl-4 border-l-2 border-teal">Vivaura Smart Gym</a>
-                <a href="vivasport.html" class="text-white font-bold text-lg pl-4 border-l-2 border-azure">VivaSport Platform</a>
-                <hr class="border-white/10 my-2">
-                <a href="about.html" class="text-silver pl-4" data-lang="nav_about">회사소개</a>
-                <a href="#" class="text-silver pl-4" data-lang="nav_contact">고객지원</a>
-                <div class="flex gap-4 pl-4 pt-2">
-                    <button class="text-white font-bold" onclick="setLang('ko')">KR</button>
-                    <button class="text-silver" onclick="setLang('en')">EN</button>
-                </div>
-            </div>
-        </div>
-    </header>
 
-<main class="py-16">
-    <div class="container mx-auto px-6 overflow-hidden pt-32 md:pt-40">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white text-center" data-lang="title">무엇을 도와드릴까요?</h1>
-            <p class="mt-4 text-lg text-silver text-center" data-lang="subtitle">Vivaura Technologies는 여러분의 목소리에 귀 기울이고 있습니다.<br>제휴 제안, 기술 지원, 일반 문의 등 무엇이든 접수해 주세요.</p>
-
-            <form id="contactForm" onsubmit="sendEmail(event)" class="mt-12 glass-card p-8 md:p-12 rounded-2xl space-y-8">
-                <fieldset>
-                    <legend class="text-2xl font-bold text-white mb-6" data-lang="section_inquiry">문의 내용</legend>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="max-w-4xl mx-auto glass-card p-8 md:p-12">
+                <form id="contactForm" onsubmit="alert('이메일 설정이 필요합니다.'); return false;" class="space-y-6">
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label for="type" class="block mb-2 font-semibold" data-lang="label_type">문의 유형</label>
-                            <select id="type" class="form-select">
-                                <option value="partnership" data-lang="type_partnership">비즈니스 제휴 제안</option>
-                                <option value="support" data-lang="type_support">기술 지원 / 서비스 장애</option>
-                                <option value="general" data-lang="type_general">일반 문의</option>
-                                <option value="marketing" data-lang="type_marketing">마케팅 / 광고</option>
-                                <option value="other" data-lang="type_other">기타</option>
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_type">문의 유형</label>
+                            <select class="form-select">
+                                <option data-i18n="opt_partnership">비즈니스 제휴</option>
+                                <option data-i18n="opt_support">기술 지원</option>
+                                <option data-i18n="opt_product">제품 도입 문의</option>
+                                <option data-i18n="opt_other">기타</option>
                             </select>
                         </div>
                         <div>
-                            <label for="attachment" class="block mb-2 font-semibold" data-lang="label_attachment">파일 첨부 (선택)</label>
-                            <input type="file" id="attachment" class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-slate file:text-white hover:file:bg-graphite">
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_email">이메일</label>
+                            <input type="email" class="form-input" placeholder="example@company.com" required>
                         </div>
                     </div>
-                    <div class="mt-6">
-                        <label for="title" class="block mb-2 font-semibold" data-lang="label_subject">제목</label>
-                        <input type="text" id="title" class="form-input" data-lang-placeholder="placeholder_subject" required>
-                    </div>
-                    <div class="mt-6">
-                        <label for="content" class="block mb-2 font-semibold" data-lang="label_content">내용</label>
-                        <textarea id="content" rows="6" class="form-textarea" data-lang-placeholder="placeholder_content" required></textarea>
-                    </div>
-                </fieldset>
 
-                <fieldset>
-                    <legend class="text-2xl font-bold text-white mb-6 pt-8 border-t border-slate" data-lang="section_info">문의자 정보</legend>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label for="company-name" class="block mb-2 font-semibold" data-lang="label_company_name">회사/기관명 (선택)</label>
-                            <input type="text" id="company-name" class="form-input" data-lang-placeholder="placeholder_company_name">
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_name">이름/담당자</label>
+                            <input type="text" class="form-input" required>
                         </div>
                         <div>
-                            <label for="contact-person" class="block mb-2 font-semibold" data-lang="label_contact_person">이름/담당자명</label>
-                            <input type="text" id="contact-person" class="form-input" data-lang-placeholder="placeholder_contact_person" required>
-                        </div>
-                         <div>
-                            <label for="contact-email" class="block mb-2 font-semibold" data-lang="label_contact_email">이메일</label>
-                            <input type="email" id="contact-email" class="form-input" data-lang-placeholder="placeholder_contact_email" required>
-                        </div>
-                        <div>
-                            <label for="contact-phone" class="block mb-2 font-semibold" data-lang="label_contact_phone">연락처</label>
-                            <input type="tel" id="contact-phone" class="form-input" data-lang-placeholder="placeholder_contact_phone">
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_phone">연락처</label>
+                            <input type="tel" class="form-input" placeholder="010-0000-0000">
                         </div>
                     </div>
-                </fieldset>
 
-                <fieldset>
-                    <legend class="text-2xl font-bold text-white mb-6 pt-8 border-t border-slate" data-lang="section_terms">이용약관 동의</legend>
                     <div>
-                        <label class="flex items-start">
-                            <input type="checkbox" id="agree_privacy" class="mt-1 h-5 w-5 rounded bg-slate border-silver text-teal focus:ring-teal" required>
-                            <span class="ml-3 flex-1">
-                                <span class="font-bold text-white" data-lang="label_agree_privacy">개인정보 수집 및 이용 동의 (필수)</span>
-                                <div class="terms-box mt-2" data-lang="terms_privacy"></div>
-                            </span>
+                        <label class="block text-sm font-bold text-white mb-2" data-i18n="label_subject">제목</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-2" data-i18n="label_message">내용</label>
+                        <textarea rows="5" class="form-textarea" required></textarea>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="checkbox-custom" required>
+                            <div class="text-sm text-silver">
+                                <span class="text-white font-bold" data-i18n="label_privacy">개인정보 수집 및 이용 동의 (필수)</span>
+                                <p class="mt-1 text-xs opacity-70" data-i18n="label_privacy_desc">수집 목적: 문의 처리 및 회신 | 보유 기간: 1년</p>
+                            </div>
                         </label>
                     </div>
-                    <div class="mt-6">
-                         <label class="flex items-start">
-                            <input type="checkbox" id="agree_notice" class="mt-1 h-5 w-5 rounded bg-slate border-silver text-teal focus:ring-teal" required>
-                            <span class="ml-3 flex-1">
-                                <span class="font-bold text-white" data-lang="label_agree_notice">유의사항 확인 (필수)</span>
-                                <div class="terms-box mt-2" data-lang="terms_notice"></div>
-                            </span>
-                        </label>
+
+                    <div class="pt-4 flex justify-end gap-4">
+                        <button type="button" class="btn btn-secondary px-6" onclick="history.back()" data-i18n="btn_cancel">취소</button>
+                        <button type="submit" class="btn btn-primary px-8" data-i18n="btn_submit">문의 접수하기</button>
                     </div>
-                </fieldset>
-
-                <div class="flex justify-end gap-4 pt-8 border-t border-slate">
-                    <button type="button" class="btn-secondary px-8 py-3 rounded-full" data-lang="button_cancel" onclick="history.back()">취소</button>
-                    <button type="submit" class="btn-primary px-8 py-3 rounded-full" data-lang="button_submit">접수하기</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</main>
-
-    <footer class="vivaura-footer">
-        <div class="vivaura-footer-content">           
-            <div class="vivaura-footer-links">
-                <a href="index.html" class="hover:text-white transition" data-lang="footer_home">Home</a>
-                <a href="privacy.html" class="hover:text-white transition" data-lang="footer_privacy">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white transition" data-lang="footer_terms">Terms of Service</a>
-                <a href="contact.html" class="hover:text-white transition" data-lang="footer_inquiry">Inquiry</a>
-            </div>
-
-            <div class="vivaura-footer-copyright">
-                <p>© 2026 Vivaura Technologies. All rights reserved.</p>
+                </form>
             </div>
         </div>
-    </footer>
+    </main>
 
-<script>
-const translations = {
-    ko: {
-        title: '무엇을 <span class="aurora-text">도와드릴까요?</span>',
-        subtitle: 'Vivaura Technologies는 여러분의 목소리에 귀 기울이고 있습니다.<br>제휴 제안, 기술 지원, 일반 문의 등 무엇이든 접수해 주세요.',
-        section_inquiry: '문의 내용',
-        label_type: '문의 유형',
-        type_partnership: '비즈니스 제휴 제안',
-        type_support: '기술 지원 / 서비스 장애',
-        type_general: '일반 문의',
-        type_marketing: '마케팅 / 광고',
-        type_other: '기타',
-        label_attachment: '파일 첨부 (선택)',
-        label_subject: '제목',
-        placeholder_subject: '문의 제목을 입력해주세요.',
-        label_content: '내용',
-        placeholder_content: '상세한 문의 내용을 기재해주세요.',
-        section_info: '문의자 정보',
-        label_company_name: '회사/기관명 (선택)',
-        placeholder_company_name: '회사/기관명을 입력해주세요',
-        label_contact_person: '이름/담당자명',
-        placeholder_contact_person: '이름 또는 담당자명을 입력해주세요',
-        label_contact_email: '이메일',
-        placeholder_contact_email: '답변 받으실 이메일을 입력해주세요',
-        label_contact_phone: '연락처',
-        placeholder_contact_phone: '숫자만 입력해주세요',
-        section_terms: '이용약관 동의',
-        label_agree_privacy: '개인정보 수집 및 이용 동의 (필수)',
-        terms_privacy: '1. 수집 항목: 회사명, 담당자명, 이메일, 연락처<br>2. 수집 목적: 문의 내용 검토 및 결과 회신<br>3. 보유 기간: 문의 처리 완료 시점으로부터 12개월간 보관 후 파기<br>4. 동의 거부에 대한 안내: 귀하는 개인정보 제공에 대해 동의하지 않으실 권리가 있으며, 동의하지 않으실 경우 문의 접수가 제한될 수 있습니다.',
-        label_agree_notice: '유의사항 확인 (필수)',
-        terms_notice: '등록해주신 문의는 내용에 따라 담당 부서로 이관되어 검토됩니다.<br>문의량이 많을 경우 답변이 다소 지연될 수 있음을 양해 부탁드립니다.<br><p>다음과 같은 경우 답변이 어려울 수 있습니다.</p>1. 욕설, 비방, 광고성 내용이 포함된 경우<br>2. 불명확한 내용으로 의도를 파악하기 어려운 경우<br>영업 비밀이나 민감한 개인정보는 포함하지 않도록 주의해 주시기 바랍니다.',
-        button_cancel: '취소',
-        button_submit: '접수하기',
-        footer_home: '홈',
-        footer_privacy: '개인정보처리방침',
-        footer_terms: '이용약관',
-        footer_inquiry: '문의'
-    },
-    en: {
-        title: 'How can we <span class="aurora-text">help you?</span>',
-        subtitle: 'Vivaura Technologies is listening to your voice.<br>Feel free to contact us for partnerships, support, or general inquiries.',
-        section_inquiry: 'Inquiry Details',
-        label_type: 'Inquiry Type',
-        type_partnership: 'Business Partnership',
-        type_support: 'Technical Support',
-        type_general: 'General Inquiry',
-        type_marketing: 'Marketing / Ads',
-        type_other: 'Other',
-        label_attachment: 'Attachment (Optional)',
-        label_subject: 'Subject',
-        placeholder_subject: 'Please enter the subject.',
-        label_content: 'Content',
-        placeholder_content: 'Please provide detailed content.',
-        section_info: 'Contact Information',
-        label_company_name: 'Company/Org (Optional)',
-        placeholder_company_name: 'Please provide Company Name',
-        label_contact_person: 'Name/Contact Person',
-        placeholder_contact_person: 'Please provide your name',
-        label_contact_email: 'Email',
-        placeholder_contact_email: 'Please provide your email address',
-        label_contact_phone: 'Phone Number',
-        placeholder_contact_phone: 'Please enter numbers only',
-        section_terms: 'Terms Agreement',
-        label_agree_privacy: 'Consent to Collection and Use of Personal Information (Required)',
-        terms_privacy: '1. Items Collected: Name, Email, Phone, Company.<br>2. Purpose: Review inquiry and respond.<br>3. Retention: Stored for 12 months after completion.<br>4. Refusal: You may refuse consent, but inquiry submission may be restricted.',
-        label_agree_notice: 'Confirmation of Important Notices (Required)',
-        terms_notice: 'Your inquiry will be forwarded to the relevant department for review.<br>Response times may vary depending on inquiry volume.<br>We may not respond to inquiries containing profanity, ads, or unclear content.',
-        button_cancel: 'Cancel',
-        button_submit: 'Submit',
-        footer_home: 'Home',
-        footer_privacy: 'Privacy Policy',
-        footer_terms: 'Terms of Service',
-        footer_inquiry: 'Inquiry'    
-    }
-};
+    <div id="footer-container"></div>
 
-
-        function setLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                const key = el.getAttribute('data-lang');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if(btn.textContent === (lang === 'ko' ? 'KR' : 'EN')) btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
-            localStorage.setItem('vivaLang', lang);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('vivaLang') || 'ko';
-            setLang(savedLang);
-        });
-		
-// 메일 전송 시뮬레이션 함수 (SMTP 전송 로직 대체)
-async function sendEmail(e) {
-    e.preventDefault();
-    
-    const btn = e.target.querySelector('button[type="submit"]');
-    const originalText = btn.innerText;
-    
-    // 필수 체크박스 확인 (HTML5 required 속성이 있지만 이중 체크)
-    if(!document.getElementById('agree_privacy').checked || !document.getElementById('agree_notice').checked) {
-        alert('이용약관 및 유의사항에 동의해주세요.');
-        return;
-    }
-
-    // 전송 중 UI 상태 변경
-    btn.disabled = true;
-    btn.innerText = '전송 중... (Sending...)';
-    btn.style.cursor = 'wait';
-
-    // 폼 데이터 수집
-    const formData = {
-        type: document.getElementById('type').value,
-        title: document.getElementById('title').value,
-        content: document.getElementById('content').value,
-        name: document.getElementById('contact-person').value,
-        email: document.getElementById('contact-email').value,
-        company: document.getElementById('company-name').value
-    };
-
-    try {
-        // === [서버 통신 시뮬레이션] ===
-        // 실제 구현 시: fetch('/api/send-mail', { method: 'POST', body: JSON.stringify(formData) })
-        await new Promise(resolve => setTimeout(resolve, 1500)); // 1.5초 지연
-
-        // 성공 메시지
-        const currentLang = localStorage.getItem('vivaSportLang') || 'ko';
-        const msg = currentLang === 'ko' 
-            ? '문의가 성공적으로 접수되었습니다.\n담당자가 확인 후 입력하신 이메일로 답변 드리겠습니다.' 
-            : 'Your inquiry has been successfully submitted.\nWe will respond to your email shortly.';
-        
-        alert(msg);
-        document.getElementById('contactForm').reset();
-        
-    } catch (error) {
-        console.error('Error:', error);
-        alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
-    } finally {
-        // UI 복구
-        btn.disabled = false;
-        btn.innerText = originalText;
-        btn.style.cursor = 'pointer';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('vivaSportLang') || 'ko';
-    setLanguage(savedLang);
-    document.querySelectorAll('[data-lang-set]').forEach(switcher => {
-        switcher.addEventListener('click', (e) => {
-            e.preventDefault();
-            const lang = switcher.getAttribute('data-lang-set');
-            setLanguage(lang);
-        });
-    });
-});
-</script>
-
-<script src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" xintegrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    <script src="js/layout.js"></script>
+    <script>
+        const pageTranslations = {
+            ko: {
+                contact_title: 'Contact & <span class="text-aurora">Support</span>',
+                contact_subtitle: '제휴 제안, 기술 지원, 일반 문의 등 무엇이든 남겨주세요.',
+                label_type: '문의 유형',
+                opt_partnership: '비즈니스 제휴',
+                opt_support: '기술 지원',
+                opt_product: '제품 도입 문의',
+                opt_other: '기타',
+                label_email: '이메일',
+                label_name: '이름/담당자',
+                label_phone: '연락처',
+                label_subject: '제목',
+                label_message: '내용',
+                label_privacy: '개인정보 수집 및 이용 동의 (필수)',
+                label_privacy_desc: '수집 목적: 문의 처리 및 회신 | 보유 기간: 1년',
+                btn_cancel: '취소',
+                btn_submit: '문의 접수하기'
+            },
+            en: {
+                contact_title: 'Contact & <span class="text-aurora">Support</span>',
+                contact_subtitle: 'Feel free to contact us for partnerships, support, or general inquiries.',
+                label_type: 'Inquiry Type',
+                opt_partnership: 'Business Partnership',
+                opt_support: 'Technical Support',
+                opt_product: 'Product Inquiry',
+                opt_other: 'Other',
+                label_email: 'Email',
+                label_name: 'Name/Contact Person',
+                label_phone: 'Phone Number',
+                label_subject: 'Subject',
+                label_message: 'Message',
+                label_privacy: 'Consent to Collection and Use of Personal Info (Required)',
+                label_privacy_desc: 'Purpose: Handling inquiry and reply | Retention: 1 year',
+                btn_cancel: 'Cancel',
+                btn_submit: 'Submit Inquiry'
+            }
+        };
+    </script>
 </body>
 </html>
-
