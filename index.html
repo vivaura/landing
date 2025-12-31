@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivaura Technologies - Play it live. Feel the aura.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1020',
+                        azure: '#3A7DFF',
+                        teal: '#00D1B2',
+                        lime: '#A6FF3B',
+                        graphite: '#1C1F2A',
+                        slate: '#2B3040',
+                        silver: '#AEB4C2',
+                    },
+                    fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
+                    backgroundImage: { 'grad-aurora': 'linear-gradient(90deg, #3A7DFF, #00D1B2, #A6FF3B)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B1020; color: #AEB4C2; -webkit-font-smoothing: antialiased; }
+        .text-aurora { background: linear-gradient(90deg, #3A7DFF, #00D1B2, #A6FF3B); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
+        .glass-card { background: rgba(28, 31, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s; }
+        .glass-card:hover { border-color: rgba(0, 209, 178, 0.3); transform: translateY(-5px); }
+        .group:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu { transition: all 0.2s ease-in-out; }
+        .lang-btn.active { color: #FFFFFF; font-weight: 700; }
+		/* 푸터 */
+        .vivaura-footer {
+            background-color: var(--vivaura-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .vivaura-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .vivaura-footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .vivaura-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .vivaura-footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .vivaura-footer-link:hover {
+            color: white;
+        }
+        
+        .vivaura-footer-copyright {
+            margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden" x-data="{ mobileMenuOpen: false }">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-navy/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+
+            <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512"><defs><linearGradient id="a1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3A7DFF"/><stop offset="100%" stop-color="#00D1B2"/></linearGradient><linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00D1B2"/><stop offset="100%" stop-color="#A6FF3B"/></linearGradient></defs><rect width="512" height="512" fill="none"/><rect x="176" y="90" width="88" height="340" rx="44" fill="url(#a1)" transform="rotate(-28 220 260)"/><rect x="248" y="90" width="88" height="340" rx="44" fill="url(#a2)" transform="rotate(28 292 260)"/></svg>
+                <span class="text-xl font-bold text-white tracking-tighter">Vivaura <span class="text-aurora">Technologies</span></span>
+        </a>
+
+            <!-- Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+			 <a href="index.html" class="text-silver hover:text-white transition font-medium" data-lang="nav_home">홈</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 text-white font-bold transition hover:text-teal">
+                        <span data-lang="nav_solutions">솔루션</span> <i class="fa-solid fa-chevron-down text-xs mt-0.5 text-slate-500 group-hover:text-teal"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-16 left-1/2 -translate-x-1/2 w-72 bg-graphite border border-white/10 rounded-xl shadow-2xl p-2 opacity-0 invisible transform translate-y-2">
+                        <div class="p-2 pb-0 text-xs font-bold text-slate-500 uppercase tracking-wider">Hardware</div>
+                        <a href="smartgym.html" class="block p-3 rounded-lg bg-slate/50 mb-1 hover:bg-slate transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-teal/20 flex items-center justify-center text-teal"><i class="fa-solid fa-dumbbell"></i></div>
+                                <div><span class="block font-bold text-white text-sm">Smart Gym</span><span class="block text-xs text-silver mt-0.5" data-lang="sub_smartgym">저비용 레트로핏 솔루션</span></div>
+                            </div>
+                        </a>
+                        <div class="p-2 pb-0 pt-2 text-xs font-bold text-slate-500 uppercase tracking-wider">Software</div>
+                        <a href="vivasport.html" class="block p-3 rounded-lg hover:bg-slate/50 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-azure/20 flex items-center justify-center text-azure"><i class="fa-solid fa-mobile-screen"></i></div>
+                                <div><span class="block font-bold text-white text-sm">VivaSport Platform</span><span class="block text-xs text-silver mt-0.5" data-lang="sub_vivasport">올인원 스포츠 앱</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="about.html" class="text-silver hover:text-white transition font-medium" data-lang="nav_about">회사소개</a>
+                <a href="#" class="text-silver hover:text-white transition font-medium" data-lang="nav_contact">고객지원</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <div class="flex gap-2 text-sm text-silver font-medium border-r border-white/10 pr-4 mr-2">
+                    <button class="lang-btn hover:text-white active" onclick="setLang('ko')">KR</button>
+                    <button class="lang-btn hover:text-white" onclick="setLang('en')">EN</button>
+                </div>
+            </div>
+            
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-navy border-t border-white/10 absolute w-full p-6 shadow-2xl" x-transition>
+            <div class="flex flex-col gap-4">
+                <div class="text-xs font-bold text-slate-500 uppercase">Solutions</div>
+                <a href="smartgym.html" class="text-white font-bold text-lg pl-4 border-l-2 border-teal">Vivaura Smart Gym</a>
+                <a href="vivasport.html" class="text-white font-bold text-lg pl-4 border-l-2 border-azure">VivaSport Platform</a>
+                <hr class="border-white/10 my-2">
+                <a href="about.html" class="text-silver pl-4" data-lang="nav_about">회사소개</a>
+                <a href="partnership.html" class="text-silver pl-4" data-lang="nav_contact">고객지원</a>
+                <div class="flex gap-4 pl-4 pt-2">
+                    <button class="text-white font-bold" onclick="setLang('ko')">KR</button>
+                    <button class="text-silver" onclick="setLang('en')">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40"> <!-- Added more top padding -->
+            <!-- Animated Background -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-grad-aurora rounded-full blur-[180px] opacity-15 animate-pulse duration-[5000ms]"></div>
+            
+            <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-bold text-silver mb-8 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span> Global Sports Tech
+                </div>
+                <!-- Adjusted font size for mobile to prevent overlap -->
+                <h1 class="text-5xl md:text-8xl font-black text-white leading-tight mb-8 tracking-tight">
+                    Play it <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime to-teal">live</span>.<br>
+                    Feel the <span class="text-transparent bg-clip-text bg-gradient-to-r from-azure to-teal">aura</span>.
+                </h1>
+                <p class="text-xl md:text-2xl text-silver max-w-3xl mx-auto mb-16 font-light leading-relaxed" data-lang="hero_desc">
+                    Vivaura Technologies는 스포츠 경험을 혁신하는<br><strong>글로벌 스포츠 테크 기업</strong>입니다.
+                </p>
+                <!-- Solutions Grid -->
+                <div class="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+                    <!-- Smart Gym Card -->
+                    <a href="smartgym.html" class="glass-card p-10 rounded-3xl text-left hover:bg-slate/40 group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-teal/10 rounded-full blur-3xl -mr-16 -mt-16 transition group-hover:bg-teal/20"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-teal/20 flex items-center justify-center text-teal text-2xl mb-6">
+                                <i class="fa-solid fa-dumbbell"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Smart Gym Solution</h3>
+                            <p class="text-silver mb-6" data-lang="card_gym_desc">아날로그 장비를 디지털로 전환하는<br>저비용 레트로핏 하드웨어 솔루션</p>
+                            <span class="text-teal font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span data-lang="view_more">자세히 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- VivaSport Card -->
+                    <a href="vivasport.html" class="glass-card p-10 rounded-3xl text-left hover:bg-slate/40 group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-azure/10 rounded-full blur-3xl -mr-16 -mt-16 transition group-hover:bg-azure/20"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-azure/20 flex items-center justify-center text-azure text-2xl mb-6">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">VivaSport Platform</h3>
+                            <p class="text-silver mb-6" data-lang="card_app_desc">이벤트, 커뮤니티, 리워드가 결합된<br>올인원 소셜 스포츠 네트워크</p>
+                            <span class="text-azure font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span data-lang="view_more">자세히 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Teaser -->
+        <section class="py-24 bg-graphite relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 w-1/3 h-full bg-gradient-to-l from-navy to-transparent pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <span class="text-lime font-bold tracking-widest uppercase text-sm mb-4 block" data-lang="about_label">Who We Are</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight" data-lang="about_title">
+                    기술로 장벽 없는<br>세상을 만듭니다.
+                </h2>
+                <p class="text-lg text-silver max-w-2xl mx-auto mb-10 leading-relaxed" data-lang="about_desc">
+                    Vivaura Technologies는 단순한 기술 공급을 넘어,<br>
+                    스포츠를 통해 사회적 가치를 창출하는 <strong>ESG Native</strong> 기업입니다.
+                </p>
+                <div class="flex justify-center gap-12 mb-12">
+                    <div class="text-center">
+                        <i class="fa-solid fa-universal-access text-3xl text-teal mb-3"></i>
+                        <p class="text-white font-bold">Inclusive</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-lightbulb text-3xl text-azure mb-3"></i>
+                        <p class="text-white font-bold">Innovative</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-leaf text-3xl text-lime mb-3"></i>
+                        <p class="text-white font-bold">Sustainable</p>
+                    </div>
+                </div>
+                <a href="about.html" class="inline-flex items-center gap-2 text-white border-b border-white pb-1 hover:text-teal hover:border-teal transition font-bold" data-lang="about_link">
+                    우리의 이야기 더 보기 <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="vivaura-footer">
+        <div class="vivaura-footer-content">           
+            <div class="vivaura-footer-links">
+                <a href="index.html" class="hover:text-white transition" data-lang="footer_home">Home</a>
+                <a href="privacy.html" class="hover:text-white transition" data-lang="footer_privacy">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition" data-lang="footer_terms">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition" data-lang="footer_inquiry">Inquiry</a>
+            </div>
+
+            <div class="vivaura-footer-copyright">
+                <p>© 2026 Vivaura Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            ko: {
+                nav_home: '홈',
+				nav_solutions: '솔루션', nav_about: '회사소개', nav_contact: '고객지원', btn_contact: 'Contact Us',
+                sub_smartgym: '저비용 레트로핏 솔루션', sub_vivasport: '올인원 스포츠 앱',
+                hero_desc: 'Vivaura Technologies는 스포츠 경험을 혁신하는<br><strong>글로벌 스포츠 테크 기업</strong>입니다.',
+                card_gym_desc: '아날로그 장비를 디지털로 전환하는<br>저비용 레트로핏 하드웨어 솔루션',
+                card_app_desc: '이벤트, 커뮤니티, 리워드가 결합된<br>올인원 소셜 스포츠 네트워크',
+                view_more: '자세히 보기',
+                about_label: 'Who We Are',
+                about_title: '기술로 장벽 없는<br>세상을 만듭니다.',
+                about_desc: 'Vivaura Technologies는 단순한 기술 공급을 넘어,<br>스포츠를 통해 사회적 가치를 창출하는 <strong>ESG Native</strong> 기업입니다.',
+                about_link: '우리의 이야기 더 보기',
+                read_story: '브랜드 스토리 더 보기',
+                footer_home: '홈',
+                footer_privacy: '개인정보처리방침',
+                footer_terms: '이용약관',
+                footer_inquiry: '문의'
+				
+            },
+            en: {
+				nav_home: 'Home',
+                nav_solutions: 'Solutions', nav_about: 'About', nav_contact: 'Support', btn_contact: 'Contact Us',
+                sub_smartgym: 'Low-cost Retrofit Solution', sub_vivasport: 'All-in-One Sports App',
+                hero_desc: 'Vivaura Technologies is a <strong>Global Sports Tech Company</strong><br>innovating the sports experience.',
+                card_gym_desc: 'Low-cost retrofit hardware solution<br>that digitizes analog equipment.',
+                card_app_desc: 'All-in-One Social Sports Network<br>combining events, community, and rewards.',
+                view_more: 'Learn More',
+                about_label: 'Who We Are',
+                about_title: 'Creating a Barrier-Free World<br>Through Technology.',
+                about_desc: 'Vivaura Technologies goes beyond supplying technology,<br>aspiring to be an <strong>ESG Native</strong> company creating social value through sports.',
+                about_link: 'Read Our Story',
+                footer_home: 'Home',
+                footer_privacy: 'Privacy Policy',
+                footer_terms: 'Terms of Service',
+                footer_inquiry: 'Inquiry'				
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.textContent === (lang === 'ko' ? 'KR' : 'EN')) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            localStorage.setItem('vivaLang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('vivaLang') || 'ko';
+            setLang(savedLang);
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b99e0f3269f247c09e3868d57eae7a3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
