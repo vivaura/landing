@@ -10,14 +10,14 @@ const commonTranslations = {
         sub_smartgym: '저비용 레트로핏 솔루션', sub_vivasport: '올인원 스포츠 앱',
         mobile_home: '홈', mobile_solutions: '솔루션', mobile_about: '회사소개', mobile_contact: '고객지원',
         footer_home: '홈', footer_privacy: '개인정보처리방침', footer_terms: '이용약관', footer_inquiry: '문의하기',
-        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.'
+        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.' // 연도 업데이트
     },
     en: {
         nav_home: 'Home', nav_solutions: 'Solutions', nav_about: 'About', nav_contact: 'Support',
         sub_smartgym: 'Low-cost Retrofit Solution', sub_vivasport: 'All-in-One Sports App',
         mobile_home: 'Home', mobile_solutions: 'Solutions', mobile_about: 'About', mobile_contact: 'Support',
         footer_home: 'Home', footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service', footer_inquiry: 'Inquiry',
-        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.'
+        footer_copyright: '© 2026 Vivaura Technologies. All rights reserved.' // 연도 업데이트
     }
 };
 
@@ -85,7 +85,6 @@ function loadHeader() {
 
             <!-- Language & Mobile Toggle -->
             <div class="flex items-center gap-5">
-                <!-- 원본 스타일 복원: gap-2, pr-4, mr-2 -->
                 <div class="hidden md:flex gap-2 text-sm text-[#AEB4C2] font-medium border-r border-white/10 pr-4 mr-2">
                     <button onclick="setLanguage('ko')" class="lang-btn hover:text-white transition" id="lang-ko">KR</button>
                     <button onclick="setLanguage('en')" class="lang-btn hover:text-white transition" id="lang-en">EN</button>
@@ -123,14 +122,14 @@ function loadFooter() {
     footerContainer.innerHTML = `
     <footer class="footer-vivaura">
         <div class="container mx-auto px-6 text-center">
-            <!-- Logo 제거 (푸터 심플하게) -->
-            <div class="flex justify-center gap-8 mb-8 flex-wrap">
-                <a href="index.html" class="footer-link" data-i18n="footer_home">홈</a>
-                <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">개인정보처리방침</a>
-                <a href="terms.html" class="footer-link" data-i18n="footer_terms">이용약관</a>
-                <a href="partnership.html" class="footer-link" data-i18n="footer_inquiry">문의하기</a>
+            <!-- Footer Links: 색상을 톤다운(text-silver/60)하고 호버 시 흰색으로 변경하여 위계 낮춤 -->
+            <div class="flex justify-center gap-8 mb-8 flex-wrap text-sm font-medium">
+                <a href="index.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_home">홈</a>
+                <a href="privacy.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_terms">이용약관</a>
+                <a href="partnership.html" class="footer-link text-silver/60 hover:text-white transition-colors" data-i18n="footer_inquiry">문의하기</a>
             </div>
-            <p class="text-sm text-silver/60" data-i18n="footer_copyright">© 2026 Vivaura Technologies. All rights reserved.</p>
+            <p class="text-xs text-silver/40" data-i18n="footer_copyright">© 2026 Vivaura Technologies. All rights reserved.</p>
         </div>
     </footer>
     `;
@@ -205,17 +204,17 @@ function updateLangButtons(lang) {
     const btnKo = document.getElementById('lang-ko');
     const btnEn = document.getElementById('lang-en');
     
-    // 원본 스타일 복원: 활성화 시 흰색+Bold (이전 버전: text-aurora 제거)
+    // 활성화된 언어 버튼에 'text-aurora' 클래스를 적용하고 비활성화 버튼은 톤다운
     if (btnKo && btnEn) {
         if (lang === 'ko') {
-            btnKo.classList.add('text-white', 'font-bold');
+            btnKo.classList.add('text-aurora', 'font-bold');
             btnKo.classList.remove('text-[#AEB4C2]');
-            btnEn.classList.remove('text-white', 'font-bold');
+            btnEn.classList.remove('text-aurora', 'font-bold');
             btnEn.classList.add('text-[#AEB4C2]');
         } else {
-            btnEn.classList.add('text-white', 'font-bold');
+            btnEn.classList.add('text-aurora', 'font-bold');
             btnEn.classList.remove('text-[#AEB4C2]');
-            btnKo.classList.remove('text-white', 'font-bold');
+            btnKo.classList.remove('text-aurora', 'font-bold');
             btnKo.classList.add('text-[#AEB4C2]');
         }
     }
