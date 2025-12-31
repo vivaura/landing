@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Solution - Vivaura Technologies</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="overflow-x-hidden">
+
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 text-center px-6 overflow-hidden">
+            <div class="bg-glow-orb" style="top: -10%; left: 50%; transform: translateX(-50%); background: var(--color-accent); width: 800px; height: 800px; opacity: 0.1;"></div>
+            
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <span class="text-[#3A7DFF] font-bold tracking-widest uppercase text-sm mb-4 block" data-i18n="organizer_badge">Event Management Solution</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" data-i18n="organizer_hero_title">
+                    성공적인 이벤트를 위한<br><span class="text-aurora">완벽한 파트너</span>
+                </h1>
+                <p class="text-xl text-silver leading-relaxed mb-10" data-i18n="organizer_hero_desc">
+                    복잡한 운영은 기술에 맡기고, 기획에만 집중하세요.<br>
+                    참가자 모집부터 결제, 실시간 스코어링까지 한 번에 해결합니다.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="btn btn-primary px-8 py-3 rounded-full text-lg no-underline" data-i18n="btn_inquiry">도입 문의하기</a>
+                    <a href="#features" class="btn btn-secondary px-8 py-3 rounded-full text-lg no-underline" data-i18n="btn_features">기능 살펴보기</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="features" class="py-20 container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 group hover:-translate-y-2 transition duration-300">
+                    <div class="w-14 h-14 rounded-full bg-[#3A7DFF]/20 flex items-center justify-center mb-6 text-[#3A7DFF] text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat_mgmt_title">참가자 통합 관리</h3>
+                    <p class="text-silver leading-relaxed" data-i18n="feat_mgmt_desc">
+                        참가 신청, 결제 확인, 배번 부여 등 반복적인 업무를 자동화하여 운영 효율을 극대화합니다.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 group hover:-translate-y-2 transition duration-300">
+                    <div class="w-14 h-14 rounded-full bg-[#00D1B2]/20 flex items-center justify-center mb-6 text-[#00D1B2] text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-stopwatch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat_scoring_title">실시간 스코어링</h3>
+                    <p class="text-silver leading-relaxed" data-i18n="feat_scoring_desc">
+                        종이 기록지는 이제 그만. 모바일 앱과 연동된 실시간 점수 집계 및 리더보드를 제공합니다.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 group hover:-translate-y-2 transition duration-300">
+                    <div class="w-14 h-14 rounded-full bg-[#A6FF3B]/20 flex items-center justify-center mb-6 text-[#A6FF3B] text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat_analytics_title">데이터 분석 리포트</h3>
+                    <p class="text-silver leading-relaxed" data-i18n="feat_analytics_desc">
+                        이벤트 종료 후 참가자 성향, 만족도 등 상세 데이터를 분석하여 다음 이벤트를 위한 인사이트를 제공합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-20 bg-[#1C1F2A] relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-transparent to-[#0B1020] pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-i18n="pricing_title">합리적인 요금제</h2>
+                    <p class="text-silver text-lg" data-i18n="pricing_desc">
+                        이벤트 규모에 맞춰 유연하게 선택하세요. 초기 비용 부담 없이 시작할 수 있습니다.
+                    </p>
+                </div>
+
+                <div class="glass-card p-10 border-2 border-[#3A7DFF] shadow-xl shadow-blue-900/20 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#3A7DFF] text-white text-xs font-bold px-4 py-1 rounded-bl-xl" data-i18n="pricing_badge">POPULAR</div>
+                    
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="pricing_plan_name">Organizer Standard</h3>
+                            <p class="text-silver mb-6" data-i18n="pricing_plan_sub">중소규모 대회 및 동호회 이벤트에 최적화</p>
+                            <div class="flex items-baseline justify-center md:justify-start gap-2">
+                                <span class="text-4xl font-extrabold text-white">9,900</span>
+                                <span class="text-silver">KRW / Event</span>
+                            </div>
+                            <p class="text-sm text-silver/60 mt-2" data-i18n="pricing_fee">+ 참가자 1인당 수수료 별도 (티켓 가격의 3~5%)</p>
+                        </div>
+
+                        <div class="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
+                            <ul class="space-y-4 text-silver mb-8 text-left">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#3A7DFF]"></i> <span data-i18n="feat_1">이벤트 페이지 생성 및 호스팅</span></li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#3A7DFF]"></i> <span data-i18n="feat_2">참가 신청 및 결제 시스템</span></li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#3A7DFF]"></i> <span data-i18n="feat_3">실시간 공지사항 발송 (App Push)</span></li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#3A7DFF]"></i> <span data-i18n="feat_4">기본 데이터 분석 리포트</span></li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-full justify-center py-3" data-i18n="btn_start">지금 시작하기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center bg-white/5 rounded-xl p-6 border border-white/10">
+                    <p class="text-silver">
+                        <span class="text-[#A6FF3B] font-bold mr-2"><i class="fa-solid fa-hand-holding-heart"></i> ESG Support</span>
+                        <span data-i18n="pricing_charity">공익 목적의 비영리 자선 행사는 플랫폼 수수료가 <strong>전액 면제</strong>됩니다.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8" data-i18n="cta_title">대규모 이벤트나 기업 행사를 준비하시나요?</h2>
+                <p class="text-silver mb-10 max-w-2xl mx-auto text-lg" data-i18n="cta_desc">
+                    전담 매니저 배정, 커스텀 브랜딩, 현장 운영 지원 등<br>엔터프라이즈급 맞춤 솔루션을 상담받아보세요.
+                </p>
+                <div class="flex justify-center">
+                    <a href="contact.html" class="btn btn-secondary px-8 py-3 rounded-full text-lg no-underline" data-i18n="btn_contact_sales">엔터프라이즈 문의</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/layout.js"></script>
+    <script>
+        const pageTranslations = {
+            ko: {
+                organizer_badge: 'Event Management Solution',
+                organizer_hero_title: '성공적인 이벤트를 위한<br><span class="text-aurora">완벽한 파트너</span>',
+                organizer_hero_desc: '복잡한 운영은 기술에 맡기고, 기획에만 집중하세요.<br>참가자 모집부터 결제, 실시간 스코어링까지 한 번에 해결합니다.',
+                btn_inquiry: '도입 문의하기',
+                btn_features: '기능 살펴보기',
+                feat_mgmt_title: '참가자 통합 관리',
+                feat_mgmt_desc: '참가 신청, 결제 확인, 배번 부여 등 반복적인 업무를 자동화하여 운영 효율을 극대화합니다.',
+                feat_scoring_title: '실시간 스코어링',
+                feat_scoring_desc: '종이 기록지는 이제 그만. 모바일 앱과 연동된 실시간 점수 집계 및 리더보드를 제공합니다.',
+                feat_analytics_title: '데이터 분석 리포트',
+                feat_analytics_desc: '이벤트 종료 후 참가자 성향, 만족도 등 상세 데이터를 분석하여 다음 이벤트를 위한 인사이트를 제공합니다.',
+                pricing_title: '합리적인 요금제',
+                pricing_desc: '이벤트 규모에 맞춰 유연하게 선택하세요. 초기 비용 부담 없이 시작할 수 있습니다.',
+                pricing_badge: 'POPULAR',
+                pricing_plan_name: 'Organizer Standard',
+                pricing_plan_sub: '중소규모 대회 및 동호회 이벤트에 최적화',
+                pricing_fee: '+ 참가자 1인당 수수료 별도 (티켓 가격의 3~5%)',
+                feat_1: '이벤트 페이지 생성 및 호스팅',
+                feat_2: '참가 신청 및 결제 시스템',
+                feat_3: '실시간 공지사항 발송 (App Push)',
+                feat_4: '기본 데이터 분석 리포트',
+                btn_start: '지금 시작하기',
+                pricing_charity: '공익 목적의 비영리 자선 행사는 플랫폼 수수료가 <strong>전액 면제</strong>됩니다.',
+                cta_title: '대규모 이벤트나 기업 행사를 준비하시나요?',
+                cta_desc: '전담 매니저 배정, 커스텀 브랜딩, 현장 운영 지원 등<br>엔터프라이즈급 맞춤 솔루션을 상담받아보세요.',
+                btn_contact_sales: '엔터프라이즈 문의'
+            },
+            en: {
+                organizer_badge: 'Event Management Solution',
+                organizer_hero_title: 'Your Perfect Partner for<br><span class="text-aurora">Successful Events</span>',
+                organizer_hero_desc: 'Leave the complex operations to tech and focus on planning.<br>We handle everything from recruitment to payments and live scoring.',
+                btn_inquiry: 'Inquire Now',
+                btn_features: 'View Features',
+                feat_mgmt_title: 'Integrated Participant Management',
+                feat_mgmt_desc: 'Maximize efficiency by automating repetitive tasks like registration, payment verification, and bib assignment.',
+                feat_scoring_title: 'Real-time Scoring',
+                feat_scoring_desc: 'No more paper sheets. Provide real-time score aggregation and leaderboards linked with the mobile app.',
+                feat_analytics_title: 'Data Analytics Report',
+                feat_analytics_desc: 'Gain insights for your next event with detailed post-event analysis on participant demographics and satisfaction.',
+                pricing_title: 'Reasonable Pricing',
+                pricing_desc: 'Choose flexibly according to your event size. Start without initial cost burden.',
+                pricing_badge: 'POPULAR',
+                pricing_plan_name: 'Organizer Standard',
+                pricing_plan_sub: 'Optimized for small to medium tournaments and club events',
+                pricing_fee: '+ Participant fee separate (3-5% of ticket price)',
+                feat_1: 'Event Page Creation & Hosting',
+                feat_2: 'Registration & Payment System',
+                feat_3: 'Real-time Notifications (App Push)',
+                feat_4: 'Basic Data Analytics Report',
+                btn_start: 'Get Started',
+                pricing_charity: 'Platform fees are <strong>fully waived</strong> for non-profit charity events.',
+                cta_title: 'Planning a Large Scale or Corporate Event?',
+                cta_desc: 'Consult for enterprise solutions including dedicated managers,<br>custom branding, and on-site operation support.',
+                btn_contact_sales: 'Enterprise Inquiry'
+            }
+        };
+    </script>
+</body>
+</html>
