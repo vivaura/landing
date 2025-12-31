@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivaura Technologies - Future of Sports Tech</title>
+    <title>Vivaura Technologies - Play it live. Feel the aura.</title>
     
     <!-- CSS Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,88 +13,98 @@
     <!-- Custom Common Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     <!-- Header Placeholder -->
     <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <main class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
-        <!-- Ambient Background -->
-        <div class="bg-glow-orb" style="top: -10%; right: -10%; background: var(--color-primary);"></div>
-        <div class="bg-glow-orb" style="bottom: -10%; left: -10%; background: var(--color-secondary); animation-delay: -5s;"></div>
-
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
-                <span class="w-2 h-2 rounded-full bg-[#A6FF3B] animate-pulse"></span>
-                <span class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="hero_badge">Future of Sports Tech</span>
-            </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40">
+            <!-- Animated Background -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[180px] opacity-15 animate-pulse duration-[5000ms]" style="background: var(--grad-aurora);"></div>
             
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight" data-i18n="hero_title">
-                Connect <span class="text-aurora">Motion</span>,<br>
-                Empower <span class="text-aurora">Performance</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-silver max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_desc">
-                비바우라 테크놀로지스는 IoT와 AI 기술을 통해<br class="md:hidden"> 스포츠 경험의 새로운 기준을 제시합니다.
-            </p>
+            <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-bold text-[#AEB4C2] mb-8 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-[#A6FF3B] animate-pulse"></span> Global Sports Tech
+                </div>
+                
+                <h1 class="text-5xl md:text-8xl font-black text-white leading-tight mb-8 tracking-tight" data-i18n="hero_title">
+                    Play it <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A6FF3B] to-[#00D1B2]">live</span>.<br>
+                    Feel the <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3A7DFF] to-[#00D1B2]">aura</span>.
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-[#AEB4C2] max-w-3xl mx-auto mb-16 font-light leading-relaxed" data-i18n="hero_desc">
+                    Vivaura Technologies는 스포츠 경험을 혁신하는<br><strong>글로벌 스포츠 테크 기업</strong>입니다.
+                </p>
+                
+                <!-- Solutions Grid -->
+                <div class="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+                    <!-- Smart Gym Card -->
+                    <a href="smartgym.html" class="glass-card p-10 rounded-3xl text-left hover:bg-slate/40 group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-[#00D1B2]/10 rounded-full blur-3xl -mr-16 -mt-16 transition group-hover:bg-[#00D1B2]/20"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-[#00D1B2]/20 flex items-center justify-center text-[#00D1B2] text-2xl mb-6">
+                                <i class="fa-solid fa-dumbbell"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Smart Gym Solution</h3>
+                            <p class="text-[#AEB4C2] mb-6" data-i18n="card_gym_desc">아날로그 장비를 디지털로 전환하는<br>저비용 레트로핏 하드웨어 솔루션</p>
+                            <span class="text-[#00D1B2] font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span data-i18n="view_more">자세히 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- VivaSport Card -->
+                    <a href="vivasport.html" class="glass-card p-10 rounded-3xl text-left hover:bg-slate/40 group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-[#3A7DFF]/10 rounded-full blur-3xl -mr-16 -mt-16 transition group-hover:bg-[#3A7DFF]/20"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-[#3A7DFF]/20 flex items-center justify-center text-[#3A7DFF] text-2xl mb-6">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">VivaSport Platform</h3>
+                            <p class="text-[#AEB4C2] mb-6" data-i18n="card_app_desc">이벤트, 커뮤니티, 리워드가 결합된<br>올인원 소셜 스포츠 네트워크</p>
+                            <span class="text-[#3A7DFF] font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span data-i18n="view_more">자세히 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="smartgym.html" class="btn btn-primary">
-                    <span data-i18n="btn_explore">솔루션 살펴보기</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="contact.html" class="btn btn-secondary" data-i18n="btn_inquiry">
-                    도입 문의
+        <!-- About Teaser -->
+        <section class="py-24 bg-[#1C1F2A] relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 w-1/3 h-full bg-gradient-to-l from-[#0B1020] to-transparent pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <span class="text-[#A6FF3B] font-bold tracking-widest uppercase text-sm mb-4 block" data-i18n="about_label">Who We Are</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight" data-i18n="about_title">
+                    기술로 장벽 없는<br>세상을 만듭니다.
+                </h2>
+                <p class="text-lg text-[#AEB4C2] max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="about_desc">
+                    Vivaura Technologies는 단순한 기술 공급을 넘어,<br>
+                    스포츠를 통해 사회적 가치를 창출하는 <strong>ESG Native</strong> 기업입니다.
+                </p>
+                <div class="flex justify-center gap-12 mb-12">
+                    <div class="text-center">
+                        <i class="fa-solid fa-universal-access text-3xl text-[#00D1B2] mb-3"></i>
+                        <p class="text-white font-bold">Inclusive</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-lightbulb text-3xl text-[#3A7DFF] mb-3"></i>
+                        <p class="text-white font-bold">Innovative</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-leaf text-3xl text-[#A6FF3B] mb-3"></i>
+                        <p class="text-white font-bold">Sustainable</p>
+                    </div>
+                </div>
+                <a href="about.html" class="inline-flex items-center gap-2 text-white border-b border-white pb-1 hover:text-[#00D1B2] hover:border-[#00D1B2] transition font-bold" data-i18n="about_link">
+                    우리의 이야기 더 보기 <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
-        </div>
+        </section>
     </main>
-
-    <!-- Features Section (Bento Grid) -->
-    <section class="py-20 relative">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16" data-i18n="section_title_solutions">Core Solutions</h2>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="glass-card p-8 md:col-span-2 group cursor-pointer relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-blue-500/20 transition"></div>
-                    <i class="fa-solid fa-dumbbell text-4xl text-[#3A7DFF] mb-6"></i>
-                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="card_smartgym_title">Smart Gym Solution</h3>
-                    <p class="text-silver mb-6" data-i18n="card_smartgym_desc">기존 운동기구에 센서를 부착하여 디지털 짐으로 변환하는 저비용 고효율 레트로핏 솔루션입니다.</p>
-                    <a href="smartgym.html" class="text-[#3A7DFF] font-bold group-hover:underline" data-i18n="link_details">자세히 보기 &rarr;</a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass-card p-8 group cursor-pointer relative overflow-hidden">
-                    <div class="absolute bottom-0 right-0 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl -mr-10 -mb-10 group-hover:bg-teal-500/20 transition"></div>
-                    <i class="fa-solid fa-mobile-screen text-4xl text-[#00D1B2] mb-6"></i>
-                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="card_app_title">VivaSport App</h3>
-                    <p class="text-silver mb-6" data-i18n="card_app_desc">운동 데이터 기록부터 경쟁, 보상까지. 사용자 참여를 극대화하는 올인원 플랫폼.</p>
-                    <a href="vivasport.html" class="text-[#00D1B2] font-bold group-hover:underline" data-i18n="link_app">앱 살펴보기 &rarr;</a>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-card p-8 group cursor-pointer">
-                    <i class="fa-solid fa-chart-line text-4xl text-[#A6FF3B] mb-6"></i>
-                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="card_analytics_title">Data Analytics</h3>
-                    <p class="text-silver" data-i18n="card_analytics_desc">AI 기반 운동 분석으로 개인화된 피드백을 제공합니다.</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="glass-card p-8 md:col-span-2 group cursor-pointer flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-white mb-3" data-i18n="card_partner_title">Partnership</h3>
-                        <p class="text-silver mb-6" data-i18n="card_partner_desc">피트니스 센터, 공공기관, 기업 웰니스 프로그램까지.<br>비바우라와 함께 건강한 문화를 만들어가세요.</p>
-                        <a href="contact.html" class="btn btn-secondary px-6 py-2 text-sm" data-i18n="btn_partner">제휴 제안하기</a>
-                    </div>
-                    <div class="text-6xl text-white/5">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer Placeholder -->
     <div id="footer-container"></div>
@@ -106,45 +116,28 @@
     <script>
         const pageTranslations = {
             ko: {
-                hero_badge: 'Future of Sports Tech',
-                hero_title: 'Connect <span class="text-aurora">Motion</span>,<br>Empower <span class="text-aurora">Performance</span>',
-                hero_desc: '비바우라 테크놀로지스는 IoT와 AI 기술을 통해<br class="md:hidden"> 스포츠 경험의 새로운 기준을 제시합니다.',
-                btn_explore: '솔루션 살펴보기',
-                btn_inquiry: '도입 문의',
-                section_title_solutions: 'Core Solutions',
-                card_smartgym_title: 'Smart Gym Solution',
-                card_smartgym_desc: '기존 운동기구에 센서를 부착하여 디지털 짐으로 변환하는 저비용 고효율 레트로핏 솔루션입니다.',
-                link_details: '자세히 보기 &rarr;',
-                card_app_title: 'VivaSport App',
-                card_app_desc: '운동 데이터 기록부터 경쟁, 보상까지. 사용자 참여를 극대화하는 올인원 플랫폼.',
-                link_app: '앱 살펴보기 &rarr;',
-                card_analytics_title: 'Data Analytics',
-                card_analytics_desc: 'AI 기반 운동 분석으로 개인화된 피드백을 제공합니다.',
-                card_partner_title: 'Partnership',
-                card_partner_desc: '피트니스 센터, 공공기관, 기업 웰니스 프로그램까지.<br>비바우라와 함께 건강한 문화를 만들어가세요.',
-                btn_partner: '제휴 제안하기'
+                hero_title: 'Play it <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A6FF3B] to-[#00D1B2]">live</span>.<br>Feel the <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3A7DFF] to-[#00D1B2]">aura</span>.',
+                hero_desc: 'Vivaura Technologies는 스포츠 경험을 혁신하는<br><strong>글로벌 스포츠 테크 기업</strong>입니다.',
+                card_gym_desc: '아날로그 장비를 디지털로 전환하는<br>저비용 레트로핏 하드웨어 솔루션',
+                card_app_desc: '이벤트, 커뮤니티, 리워드가 결합된<br>올인원 소셜 스포츠 네트워크',
+                view_more: '자세히 보기',
+                about_label: 'Who We Are',
+                about_title: '기술로 장벽 없는<br>세상을 만듭니다.',
+                about_desc: 'Vivaura Technologies는 단순한 기술 공급을 넘어,<br>스포츠를 통해 사회적 가치를 창출하는 <strong>ESG Native</strong> 기업입니다.',
+                about_link: '우리의 이야기 더 보기'
             },
             en: {
-                hero_badge: 'Future of Sports Tech',
-                hero_title: 'Connect <span class="text-aurora">Motion</span>,<br>Empower <span class="text-aurora">Performance</span>',
-                hero_desc: 'Vivaura Technologies sets a new standard for sports experiences<br class="md:hidden"> through IoT and AI technology.',
-                btn_explore: 'Explore Solutions',
-                btn_inquiry: 'Contact Us',
-                section_title_solutions: 'Core Solutions',
-                card_smartgym_title: 'Smart Gym Solution',
-                card_smartgym_desc: 'A cost-effective retrofit solution that transforms existing gym equipment into a digital gym by attaching sensors.',
-                link_details: 'Learn More &rarr;',
-                card_app_title: 'VivaSport App',
-                card_app_desc: 'An all-in-one platform maximizing user engagement from workout logging to competition and rewards.',
-                link_app: 'View App &rarr;',
-                card_analytics_title: 'Data Analytics',
-                card_analytics_desc: 'Provides personalized feedback through AI-based workout analysis.',
-                card_partner_title: 'Partnership',
-                card_partner_desc: 'From fitness centers to public institutions and corporate wellness programs.<br>Create a healthy culture with Vivaura.',
-                btn_partner: 'Partner With Us'
+                hero_title: 'Play it <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A6FF3B] to-[#00D1B2]">live</span>.<br>Feel the <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3A7DFF] to-[#00D1B2]">aura</span>.',
+                hero_desc: 'Vivaura Technologies is a <strong>Global Sports Tech Company</strong><br>innovating the sports experience.',
+                card_gym_desc: 'Low-cost retrofit hardware solution<br>that digitizes analog equipment.',
+                card_app_desc: 'All-in-One Social Sports Network<br>combining events, community, and rewards.',
+                view_more: 'Learn More',
+                about_label: 'Who We Are',
+                about_title: 'Creating a Barrier-Free World<br>Through Technology.',
+                about_desc: 'Vivaura Technologies goes beyond supplying technology,<br>aspiring to be an <strong>ESG Native</strong> company creating social value through sports.',
+                about_link: 'Read Our Story'
             }
         };
     </script>
-
 </body>
 </html>
