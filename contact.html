@@ -3,111 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Vivaura Technologies</title>
+    <title>Contact Us - Vivaura Technologies</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // emailjs.init("YOUR_PUBLIC_KEY"); // 실제 사용 시 키 입력 필요
+        })();
+    </script>
 </head>
 <body class="overflow-x-hidden">
 
     <div id="header-container"></div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 text-center px-6">
-            <div class="bg-glow-orb" style="top: 10%; right: 50%; transform: translateX(50%); background: var(--color-primary); width: 600px; height: 600px; opacity: 0.15;"></div>
-            <div class="relative z-10 max-w-4xl mx-auto">
-                <span class="text-[#A6FF3B] font-bold tracking-widest uppercase text-sm mb-4 block" data-i18n="about_label">Our Philosophy</span>
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight" data-i18n="about_hero_title">
-                    스포츠로 세상을 <span class="text-aurora">연결</span>하다
-                </h1>
-                <p class="text-xl text-silver leading-relaxed" data-i18n="about_hero_desc">
-                    우리는 기술을 통해 모두가 평등하게 스포츠를 즐기고,<br class="hidden md:block">
-                    그 열정이 긍정적인 사회 변화로 이어지는 세상을 꿈꿉니다.
-                </p>
-            </div>
-        </section>
+    <main class="pt-32 pb-20 relative">
+        <div class="bg-glow-orb" style="top: 0; left: 50%; transform: translateX(-50%); background: var(--color-primary);"></div>
 
-        <!-- Vision, Mission, Values -->
-        <section class="container mx-auto px-6 mb-24">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 text-center hover:-translate-y-2 transition-transform duration-300">
-                    <div class="w-16 h-16 rounded-full bg-[#3A7DFF]/20 flex items-center justify-center mx-auto mb-6 text-[#3A7DFF] text-3xl">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Vision</h3>
-                    <p class="text-silver leading-relaxed" data-i18n="about_vision_desc">
-                        장벽 없는 스포츠 경험,<br>연결된 건강한 사회
-                    </p>
-                </div>
-                <div class="glass-card p-10 text-center hover:-translate-y-2 transition-transform duration-300 delay-100">
-                    <div class="w-16 h-16 rounded-full bg-[#00D1B2]/20 flex items-center justify-center mx-auto mb-6 text-[#00D1B2] text-3xl">
-                        <i class="fa-solid fa-rocket"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Mission</h3>
-                    <p class="text-silver leading-relaxed" data-i18n="about_mission_desc">
-                        혁신적인 기술로 스포츠의 접근성을 높이고<br>지속 가능한 가치를 창출합니다.
-                    </p>
-                </div>
-                <div class="glass-card p-10 text-center hover:-translate-y-2 transition-transform duration-300 delay-200">
-                    <div class="w-16 h-16 rounded-full bg-[#A6FF3B]/20 flex items-center justify-center mx-auto mb-6 text-[#A6FF3B] text-3xl">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Core Values</h3>
-                    <p class="text-silver leading-relaxed" data-i18n="about_values_desc">
-                        <span class="block mb-1"><strong class="text-white">Inclusion</strong> (포용)</span>
-                        <span class="block mb-1"><strong class="text-white">Innovation</strong> (혁신)</span>
-                        <span class="block"><strong class="text-white">Integrity</strong> (진정성)</span>
-                    </p>
-                </div>
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="contact_title">Contact & <span class="text-aurora">Support</span></h1>
+                <p class="text-silver" data-i18n="contact_subtitle">제휴 제안, 기술 지원, 일반 문의 등 무엇이든 남겨주세요.</p>
             </div>
-        </section>
 
-        <!-- Who We Are (Story) -->
-        <section class="py-20 relative bg-[#1C1F2A]">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-transparent to-[#0B1020] pointer-events-none"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
-                    <div class="md:w-1/2">
-                        <div class="relative">
-                            <div class="absolute -inset-4 bg-gradient-to-r from-[#3A7DFF] to-[#00D1B2] rounded-2xl opacity-20 blur-lg"></div>
-                            <img src="https://images.unsplash.com/photo-1552674605-469523f5405c" alt="Team Meeting" class="relative rounded-2xl shadow-2xl w-full object-cover h-[400px]">
+            <div class="max-w-4xl mx-auto glass-card p-8 md:p-12">
+                <form id="contactForm" onsubmit="alert('이메일 설정이 필요합니다.'); return false;" class="space-y-6">
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_type">문의 유형</label>
+                            <select class="form-select">
+                                <option data-i18n="opt_partnership">비즈니스 제휴</option>
+                                <option data-i18n="opt_support">기술 지원</option>
+                                <option data-i18n="opt_product">제품 도입 문의</option>
+                                <option data-i18n="opt_other">기타</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_email">이메일</label>
+                            <input type="email" class="form-input" placeholder="example@company.com" required>
                         </div>
                     </div>
-                    <div class="md:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-i18n="story_title">우리는 <span class="text-aurora">체인지 메이커</span>입니다.</h2>
-                        <div class="space-y-6 text-silver text-lg leading-relaxed">
-                            <p data-i18n="story_p1">
-                                Vivaura Technologies는 단순히 운동 기구에 센서를 부착하거나 앱을 만드는 회사가 아닙니다. 우리는 기술이 사람을 소외시키지 않고, 오히려 더 깊이 연결할 수 있다고 믿습니다.
-                            </p>
-                            <p data-i18n="story_p2">
-                                2026년, 우리는 스포츠 테크의 새로운 기준을 세우기 위해 출발합니다. 낡은 체육관을 최첨단 스마트 짐으로 바꾸고, 혼자 하는 운동을 모두가 함께 즐기는 축제로 만듭니다.
-                            </p>
-                            <p data-i18n="story_p3">
-                                우리의 목표는 명확합니다. 기술 장벽 없이, 경제적 부담 없이, 누구나 건강한 삶을 누릴 권리를 기술로 실현하는 것입니다.
-                            </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_name">이름/담당자</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-white mb-2" data-i18n="label_phone">연락처</label>
+                            <input type="tel" class="form-input" placeholder="010-0000-0000">
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CTA -->
-        <section class="py-24 text-center">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8" data-i18n="cta_join_title">우리의 여정에 함께하세요</h2>
-                <p class="text-silver mb-10 max-w-2xl mx-auto text-lg" data-i18n="cta_join_desc">
-                    Vivaura와 함께 건강한 미래를 만들어갈 파트너와 인재를 기다립니다.<br>
-                    우리가 만드는 변화의 주인공이 되어주세요.
-                </p>
-                <div class="flex justify-center gap-6">
-                    <a href="contact.html" class="btn btn-primary px-8 py-3 rounded-full text-lg no-underline" data-i18n="btn_partnership">제휴 문의하기</a>
-                </div>
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-2" data-i18n="label_subject">제목</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-2" data-i18n="label_message">내용</label>
+                        <textarea rows="5" class="form-textarea" required></textarea>
+                    </div>
+
+                    <!-- 이용약관 및 유의사항 섹션 추가 -->
+                    <fieldset class="pt-8 border-t border-white/10 space-y-6">
+                        <legend class="text-lg font-bold text-white mb-4" data-i18n="section_terms">이용약관 동의</legend>
+                        
+                        <!-- 개인정보 수집 및 이용 동의 -->
+                        <div>
+                            <label class="flex items-start gap-3 cursor-pointer mb-2">
+                                <input type="checkbox" class="checkbox-custom mt-1" required>
+                                <span class="font-bold text-white text-sm pt-1" data-i18n="label_agree_privacy">개인정보 수집 및 이용 동의 (필수)</span>
+                            </label>
+                            <div class="terms-scroll-box" data-i18n="terms_privacy_content">
+                                1. 수집 항목: 회사명, 담당자명, 이메일, 연락처<br>
+                                2. 수집 목적: 제휴 제안 검토 및 결과 회신<br>
+                                3. 보유 기간: 제휴 관련 협의 종료 시점으로부터 12개월간 보관 후 파기<br>
+                                4. 동의 거부에 대한 안내: 귀하는 개인정보 제공에 대해 동의하지 않으실 권리가 있으며, 동의하지 않으실 경우 제휴 제안 접수가 제한될 수 있습니다.
+                            </div>
+                        </div>
+
+                        <!-- 유의사항 확인 -->
+                        <div>
+                            <label class="flex items-start gap-3 cursor-pointer mb-2">
+                                <input type="checkbox" class="checkbox-custom mt-1" required>
+                                <span class="font-bold text-white text-sm pt-1" data-i18n="label_agree_notice">유의사항 확인 (필수)</span>
+                            </label>
+                            <div class="terms-scroll-box" data-i18n="terms_notice_content">
+                                등록해주신 제안은 내부 검토 후, 당사의 사업 방향성 및 제반 조건에 따라 제휴 진행 여부를 결정합니다.<br>
+                                제안이 채택될 경우, 별도로 연락드려 구체적인 협의를 진행할 예정입니다.<br>
+                                <br>
+                                [제휴 미성사 사유 안내]<br>
+                                1. 당사에서 이미 유사하거나 동일한 사업을 검토 또는 추진 중인 경우<br>
+                                2. 제 3자가 동일하거나 유사한 제안을 먼저 제출한 경우<br>
+                                3. 당시의 사업전략, 방향성, 기타 내부 사정과 부합하지 않는 경우 등<br>
+                                <br>
+                                당사는 제안이 채택되지 않은 경우, 제안자에게 회신, 보상 등 어떠한 의무도 부담하지 않습니다.<br>
+                                또한, 제휴 제안 시에는 영업 비밀, 기밀 정보 등 공개가 제한되어야 하는 민감한 내용은 제외하고 작성해 주시기 바랍니다.
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="pt-8 flex justify-end gap-4 border-t border-white/10 mt-8">
+                        <button type="button" class="btn btn-secondary px-6" onclick="history.back()" data-i18n="btn_cancel">취소</button>
+                        <button type="submit" class="btn btn-primary px-8" data-i18n="btn_submit">문의 접수하기</button>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
     </main>
 
     <div id="footer-container"></div>
@@ -116,34 +126,46 @@
     <script>
         const pageTranslations = {
             ko: {
-                about_label: 'Our Philosophy',
-                about_hero_title: '스포츠로 세상을 <span class="text-aurora">연결</span>하다',
-                about_hero_desc: '우리는 기술을 통해 모두가 평등하게 스포츠를 즐기고,<br class="hidden md:block">그 열정이 긍정적인 사회 변화로 이어지는 세상을 꿈꿉니다.',
-                about_vision_desc: '장벽 없는 스포츠 경험,<br>연결된 건강한 사회',
-                about_mission_desc: '혁신적인 기술로 스포츠의 접근성을 높이고<br>지속 가능한 가치를 창출합니다.',
-                about_values_desc: '<span class="block mb-1"><strong class="text-white">Inclusion</strong> (포용)</span><span class="block mb-1"><strong class="text-white">Innovation</strong> (혁신)</span><span class="block"><strong class="text-white">Integrity</strong> (진정성)</span>',
-                story_title: '우리는 <span class="text-aurora">체인지 메이커</span>입니다.',
-                story_p1: 'Vivaura Technologies는 단순히 운동 기구에 센서를 부착하거나 앱을 만드는 회사가 아닙니다. 우리는 기술이 사람을 소외시키지 않고, 오히려 더 깊이 연결할 수 있다고 믿습니다.',
-                story_p2: '2026년, 우리는 스포츠 테크의 새로운 기준을 세우기 위해 출발합니다. 낡은 체육관을 최첨단 스마트 짐으로 바꾸고, 혼자 하는 운동을 모두가 함께 즐기는 축제로 만듭니다.',
-                story_p3: '우리의 목표는 명확합니다. 기술 장벽 없이, 경제적 부담 없이, 누구나 건강한 삶을 누릴 권리를 기술로 실현하는 것입니다.',
-                cta_join_title: '우리의 여정에 함께하세요',
-                cta_join_desc: 'Vivaura와 함께 건강한 미래를 만들어갈 파트너와 인재를 기다립니다.<br>우리가 만드는 변화의 주인공이 되어주세요.',
-                btn_partnership: '제휴 문의하기'
+                contact_title: 'Contact & <span class="text-aurora">Support</span>',
+                contact_subtitle: '제휴 제안, 기술 지원, 일반 문의 등 무엇이든 남겨주세요.',
+                label_type: '문의 유형',
+                opt_partnership: '비즈니스 제휴',
+                opt_support: '기술 지원',
+                opt_product: '제품 도입 문의',
+                opt_other: '기타',
+                label_email: '이메일',
+                label_name: '이름/담당자',
+                label_phone: '연락처',
+                label_subject: '제목',
+                label_message: '내용',
+                section_terms: '이용약관 동의',
+                label_agree_privacy: '개인정보 수집 및 이용 동의 (필수)',
+                terms_privacy_content: '1. 수집 항목: 회사명, 담당자명, 이메일, 연락처<br>2. 수집 목적: 제휴 제안 검토 및 결과 회신<br>3. 보유 기간: 제휴 관련 협의 종료 시점으로부터 12개월간 보관 후 파기<br>4. 동의 거부에 대한 안내: 귀하는 개인정보 제공에 대해 동의하지 않으실 권리가 있으며, 동의하지 않으실 경우 제휴 제안 접수가 제한될 수 있습니다.',
+                label_agree_notice: '유의사항 확인 (필수)',
+                terms_notice_content: '등록해주신 제안은 내부 검토 후, 당사의 사업 방향성 및 제반 조건에 따라 제휴 진행 여부를 결정합니다.<br>제안이 채택될 경우, 별도로 연락드려 구체적인 협의를 진행할 예정입니다.<br><br>[제휴 미성사 사유 안내]<br>1. 당사에서 이미 유사하거나 동일한 사업을 검토 또는 추진 중인 경우<br>2. 제 3자가 동일하거나 유사한 제안을 먼저 제출한 경우<br>3. 당시의 사업전략, 방향성, 기타 내부 사정과 부합하지 않는 경우 등<br><br>당사는 제안이 채택되지 않은 경우, 제안자에게 회신, 보상 등 어떠한 의무도 부담하지 않습니다.<br>또한, 제휴 제안 시에는 영업 비밀, 기밀 정보 등 공개가 제한되어야 하는 민감한 내용은 제외하고 작성해 주시기 바랍니다.',
+                btn_cancel: '취소',
+                btn_submit: '문의 접수하기'
             },
             en: {
-                about_label: 'Our Philosophy',
-                about_hero_title: 'Connecting the World <span class="text-aurora">Through Sports</span>',
-                about_hero_desc: 'We dream of a world where technology allows everyone to enjoy sports equally,<br class="hidden md:block">turning that passion into positive social change.',
-                about_vision_desc: 'Barrier-free sports experience,<br>A connected healthy society',
-                about_mission_desc: 'Enhancing sports accessibility through innovative technology<br>and creating sustainable value.',
-                about_values_desc: '<span class="block mb-1"><strong class="text-white">Inclusion</strong></span><span class="block mb-1"><strong class="text-white">Innovation</strong></span><span class="block"><strong class="text-white">Integrity</strong></span>',
-                story_title: 'We are <span class="text-aurora">Change Makers</span>.',
-                story_p1: 'Vivaura Technologies is not just about attaching sensors to gym equipment or making apps. We believe technology should connect people deeply, not alienate them.',
-                story_p2: 'Starting in 2026, we set a new standard for sports tech. We transform old gyms into state-of-the-art smart gyms and turn solitary workouts into festivals enjoyed together.',
-                story_p3: 'Our goal is clear. To realize the right for everyone to enjoy a healthy life without technological barriers or economic burdens through technology.',
-                cta_join_title: 'Join Our Journey',
-                cta_join_desc: 'We are looking for partners and talents to create a healthy future with Vivaura.<br>Be the protagonist of the change we create.',
-                btn_partnership: 'Partnership Inquiry'
+                contact_title: 'Contact & <span class="text-aurora">Support</span>',
+                contact_subtitle: 'Feel free to contact us for partnerships, support, or general inquiries.',
+                label_type: 'Inquiry Type',
+                opt_partnership: 'Business Partnership',
+                opt_support: 'Technical Support',
+                opt_product: 'Product Inquiry',
+                opt_other: 'Other',
+                label_email: 'Email',
+                label_name: 'Name/Contact Person',
+                label_phone: 'Phone Number',
+                label_subject: 'Subject',
+                label_message: 'Message',
+                section_terms: 'Terms Agreement',
+                label_agree_privacy: 'Consent to Collection and Use of Personal Information (Required)',
+                terms_privacy_content: '1. Items Collected: Company name, contact person, email, contact number<br>2. Purpose of Collection: Review of partnership proposal and reply<br>3. Retention Period: Stored for 12 months after the end of partnership discussions, then destroyed<br>4. Notice on Refusal: You have the right to refuse consent to the provision of personal information. However, if you refuse, submission of the partnership proposal may be restricted.',
+                label_agree_notice: 'Confirmation of Important Notices (Required)',
+                terms_notice_content: 'Submitted proposals will be reviewed internally, and the decision to proceed with the partnership will be made based on our business direction and conditions.<br>If the proposal is selected, we will contact you separately to proceed with detailed discussions.<br><br>[Reasons for Non-Partnership]<br>1. If we are already reviewing or pursuing a similar or identical business<br>2. If a third party has submitted a similar or identical proposal first<br>3. If it does not align with our current business strategy, direction, or other internal circumstances<br><br>We are under no obligation to reply or compensate the proposer if the proposal is not selected.<br>Please exclude sensitive content such as trade secrets or confidential information when submitting a partnership proposal.',
+                btn_cancel: 'Cancel',
+                btn_submit: 'Submit Inquiry'
             }
         };
     </script>
